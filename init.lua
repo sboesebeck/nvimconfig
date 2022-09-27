@@ -20,5 +20,8 @@ require("user.indentline")
 require("user.alpha")
 require("user.lsp")
 require("user.dap")
+require("user.bookmarks")
 
 --[[ require("mason").setup() ]]
+
+require("neoscroll").setup()

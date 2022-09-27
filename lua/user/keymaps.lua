@@ -85,7 +85,7 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 --[[ -- lsp ]]
 --[[ keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) ]]
---[[ keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) ]]
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 --[[ keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) ]]
 --[[ keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) ]]
 --[[ keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) ]]
@@ -104,3 +104,11 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 
 -- Toggleterm
 keymap("n","<leader>t","<cmd>ToggleTerm<cr>",opts)
+
+
+-- spectre
+keymap("n","<leader>S", "<cmd>lua require('spectre').open()<CR>",opts)
+keymap("n","<leader>sw","<cmd>lua require('spectre').open_visual({select_word=true})<CR>",opts)
+keymap("n","<leader>s", "<esc>:lua require('spectre').open_visual()<CR>",opts)
+keymap("n","<leader>sp","viw:lua require('spectre').open_file_search()<cr>",opts)
+

@@ -42,6 +42,7 @@ return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim" } -- Have packer manage itself
   use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
+  use { 'windwp/nvim-spectre'}
   use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
@@ -91,14 +92,18 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter"
   }
 
+  use { 'nacro90/numb.nvim' }
+  use { 'karb94/neoscroll.nvim'}
   -- Git
   use { "lewis6991/gitsigns.nvim" }
+  use { 'f-person/git-blame.nvim'}
 
   -- DAP
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
   use { "ravenxrz/DAPInstall.nvim" }
 
+  use { 'MattesGroeger/vim-bookmarks'}
 
   -- JAVA 
   use { "mfussenegger/nvim-jdtls"}
