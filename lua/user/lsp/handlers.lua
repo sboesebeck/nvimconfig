@@ -81,6 +81,7 @@ M.on_attach = function(client, bufnr)
 		client.resolved_capabilities.document_formatting = false
 	end
 	if client.name == "jdtls" then
+		print("Setting up jdtls")
 		if not status_ok then
 			print("Something wrong with illuminate")
 			return
@@ -90,7 +91,7 @@ M.on_attach = function(client, bufnr)
 
 		client.resolved_capabilities.document_formatting = false
 		client.resolved_capabilities.completion.completionItem.snippetSupport = false
-    vim.lsp.codelens.refresh()
+		vim.lsp.codelens.refresh()
 	end
 
 	if client.name == "sumneko_lua" then
