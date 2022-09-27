@@ -58,9 +58,6 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim" }
   use { "goolord/alpha-nvim" }
   
-  -- Terminal
-  use {"akinsho/toggleterm.nvim", tag = '*'}
-
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
   use { "lunarvim/darkplus.nvim" }
