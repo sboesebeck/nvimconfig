@@ -45,6 +45,7 @@ return packer.startup(function(use)
   use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
+  use { "ahmedkhalf/project.nvim" }
   use { "kyazdani42/nvim-web-devicons" }
   use { "kyazdani42/nvim-tree.lua" }
   use { "akinsho/bufferline.nvim" }
@@ -53,10 +54,12 @@ return packer.startup(function(use)
 
   use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim" }
-  use { "ahmedkhalf/project.nvim" }
   use { "lewis6991/impatient.nvim" }
   use { "lukas-reineke/indent-blankline.nvim" }
   use { "goolord/alpha-nvim" }
+  
+  -- Terminal
+  use {"akinsho/toggleterm.nvim", tag = '*'}
 
   -- Colorschemes
   use { "folke/tokyonight.nvim" }

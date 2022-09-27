@@ -99,3 +99,8 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 --[[ keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts) ]]
 --[[ keymap("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts) ]]
 --[[ keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) ]]
+
+
+
+-- Toggleterm
+keymap("n","<leader>t","<cmd>ToggleTerm<cr>",opts)
