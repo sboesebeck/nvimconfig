@@ -1,3 +1,4 @@
+print("In Sumneko_lua")
 return {
 	settings = {
 		Lua = {

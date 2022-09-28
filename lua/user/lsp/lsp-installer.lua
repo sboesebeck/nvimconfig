@@ -7,7 +7,6 @@ local servers = {
 	"sumneko_lua",
 	"cssls",
 	"html",
-  "lua",
 	"tsserver",
 	"pyright",
 	"bashls",
@@ -32,6 +31,7 @@ for _, server in pairs(servers) do
 	}
 
 	if server == "sumneko_lua" then
+    print("Init sumneko")
 		local sumneko_opts = require("user.lsp.settings.sumneko_lua")
 		opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	end
