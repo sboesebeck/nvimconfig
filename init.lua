@@ -21,6 +21,7 @@ require("user.alpha")
 require("user.lsp")
 require("user.dap")
 require("user.bookmarks")
+require("user.null-ls")
 
 -- require("mason").setup() ]]
 
