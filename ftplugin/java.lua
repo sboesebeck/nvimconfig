@@ -62,6 +62,16 @@ if JAVA_DAP_ACTIVE then
 	)
 end
 
+function on_attach_jdtls(client,bufnr)
+		require("jdtls").setup_dap({ hotcodereplace = "auto" })
+		require("jdtls.dap").setup_dap_main_class_configs()
+
+		client.resolved_capabilities.document_formatting = false
+		client.resolved_capabilities.completion.completionItem.snippetSupport = false
+		vim.lsp.codelens.refresh()
+
+end
+
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
 	-- The command that starts the language server
@@ -70,13 +80,13 @@ local config = {
 
 		-- 💀
 		"java", -- or '/path/to/java11_or_newer/bin/java'
+		"-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
 		-- depends on if `java` is in your $PATH env variable and if it points to the right version.
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
 		"-Dosgi.bundles.defaultStartLevel=4",
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
-		"-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
 		"-Xms1g",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
@@ -104,9 +114,9 @@ local config = {
 		workspace_dir,
 	},
 
-	on_attach = require("user.lsp.handlers").on_attach,
+	
 	capabilities = capabilities,
-
+  on_attach=on_attach_jdtls,
 	-- 💀
 	-- This is the default if not provided, you can remove it. Or adjust as needed.
 	-- One dedicated LSP server & client will be started per unique root_dir

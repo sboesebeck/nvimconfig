@@ -27,14 +27,15 @@ keymap("n", "<leader>i", "<C-w>k", opts)
 keymap("n", "<leader>l", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<M-Up>", ":resize -2<CR>", opts)
+keymap("n", "<M-Down>", ":resize +2<CR>", opts)
+keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-j>", ":bprevious<CR>", opts)
+keymap("n", "<S-c>", ":close<CR>",opts)
 
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -90,7 +91,7 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- keymap("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 -- keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 -- keymap("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
 -- keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 -- keymap("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 -- keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -101,7 +102,7 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
 -- keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Toggleterm
-keymap("n", "<leader>t", "<cmd>ToggleTerm<cr>", opts)
+keymap("n", "<F12>", "<cmd>ToggleTerm<cr>", opts)
 
 -- spectre
 keymap("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", opts)
