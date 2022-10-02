@@ -22,6 +22,11 @@ M.setup = function()
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 	end
 
+  require("lspconfig")["sumneko_lua"].setup{
+    on_attach=on_attach
+    
+  }
+
 	local config = {
 		virtual_text = false, -- disable virtual text
 		signs = {
@@ -95,7 +100,8 @@ M.on_attach = function(client, bufnr)
 	end
 
 	if client.name == "sumneko_lua" then
-		client.resolved_capabilities.document_formatting = false
+		client.resolved_capabilities.document_formatting =true 
+    print("Configuring sumneko_lua")
 	end
 end
 
