@@ -4,9 +4,10 @@ if not status_ok then
   return
 end
 
-function on_attach_lua(client, bufnr)
+local function on_attach_lua(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  -- print("OnAttach for lua")
+  -- print("OnAttach for lua
+
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
