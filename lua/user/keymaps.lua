@@ -102,7 +102,8 @@ keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opt
 -- keymap("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Toggleterm
-keymap("n", "<F12>", "<cmd>ToggleTerm<cr>", opts)
+keymap("n", "<F12>", "<cmd>ToggleTerm direction=float<cr>", opts)
+keymap("n", "<F10>", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
 
 -- spectre
 keymap("n", "<leader>S", "<cmd>lua require('spectre').open()<CR>", opts)
