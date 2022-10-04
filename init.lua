@@ -23,6 +23,8 @@ require("user.lsp")
 require("user.dap")
 require("user.bookmarks")
 require("user.null-ls")
+require("user.numb")
+require("user.neoscroll")
 -- require("mason").setup() ]]
 
-require("neoscroll").setup()
+-- require("neoscroll").setup()
