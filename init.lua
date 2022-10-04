@@ -1,5 +1,6 @@
 require("user.options")
 require("user.plugins")
+require("user.whichkey")
 require("user.keymaps")
 require("user.autocommands")
 require("user.colorscheme")
@@ -22,7 +23,6 @@ require("user.lsp")
 require("user.dap")
 require("user.bookmarks")
 require("user.null-ls")
-
 -- require("mason").setup() ]]
 
 require("neoscroll").setup()
