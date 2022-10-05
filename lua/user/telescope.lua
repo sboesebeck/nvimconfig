@@ -15,10 +15,13 @@ telescope.setup({
 
 		mappings = {
 			i = {
-				["<Down>"] = actions.cycle_history_next,
-				["<Up>"] = actions.cycle_history_prev,
-				["<C-j>"] = actions.move_selection_next,
-				["<C-k>"] = actions.move_selection_previous,
+				-- ["<Down>"] = actions.cycle_history_next,
+				-- ["<Up>"] = actions.cycle_history_prev,
+				-- ["<C-k>"] = actions.move_selection_next,
+				-- ["<C-j>"] = actions.move_selection_previous,
+				["<C-k>"] = actions.cycle_history_next,
+				["<C-j>"] = actions.cycle_history_prev,
+				["<C-i>"] = actions.cycle_history_prev,
 			},
 		},
 	},
