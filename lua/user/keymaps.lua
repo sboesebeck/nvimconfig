@@ -112,6 +112,16 @@ if not status_ok then
 	keymap("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", opts)
 	keymap("n", "<leader>s", "<esc>:lua require('spectre').open_visual()<CR>", opts)
 	keymap("n", "<leader>sp", "viw:lua require('spectre').open_file_search()<cr>", opts)
+
+	-- Toggleterm
+	keymap("n", "<F12>", "<cmd>ToggleTerm direction=float<cr>", opts)
+	keymap("n", "<F10>", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
+  -- debugging
+  keymap("n","<F8>","<cmd>lua require('dap').step_over()<CR>",opts)
+  keymap("n","<F9>","<cmd>lua require('dap').continue()<CR>",opts)
+  keymap("n","<F7>","<cmd>lua require('dap').step_into()<CR>",opts)
+
+
 else
 	-- print("Configuring which-key")
 	-- local opts = {
@@ -150,7 +160,6 @@ else
 			D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
 			I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementation" },
 			r = { "<cmd>lua vim.lsp.buf.references()<cr>", "references" },
-			l = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostic" },
 		},
 	}, { mode = "n", prefix = "" })
 
@@ -165,6 +174,7 @@ else
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 			s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature" },
 			q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "LocList" },
+			d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostic" },
 		},
 	}, { mode = "n", prefix = "" })
 
@@ -181,7 +191,7 @@ else
 	-- Toggleterm
 	keymap("n", "<F12>", "<cmd>ToggleTerm direction=float<cr>", opts)
 	keymap("n", "<F10>", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
-
+  -- debugging
   keymap("n","<F8>","<cmd>lua require('dap').step_over()<CR>",opts)
   keymap("n","<F9>","<cmd>lua require('dap').continue()<CR>",opts)
   keymap("n","<F7>","<cmd>lua require('dap').step_into()<CR>",opts)
