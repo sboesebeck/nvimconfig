@@ -78,7 +78,7 @@ lspconfig.bashls.setup({bashlsconfig})
 local clangdconfig={
   -- capabilities = default capabilities, with offsetEncoding utf-8,
     cmd = { "clangd", "--background-index" },
-    filetypes = { "ino","c", "cpp", "objc", "objcpp" },
+    filetypes = { "ino","arduino","c", "cpp", "objc", "objcpp" },
     log_level = 2,
     -- on_init = function to handle changing offsetEncoding
     -- root_dir = root_pattern("compile_commands.json", "compile_flags.txt", ".git")
