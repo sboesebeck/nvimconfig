@@ -116,12 +116,10 @@ if not status_ok then
 	-- Toggleterm
 	keymap("n", "<F12>", "<cmd>ToggleTerm direction=float<cr>", opts)
 	keymap("n", "<F10>", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
-  -- debugging
-  keymap("n","<F8>","<cmd>lua require('dap').step_over()<CR>",opts)
-  keymap("n","<F9>","<cmd>lua require('dap').continue()<CR>",opts)
-  keymap("n","<F7>","<cmd>lua require('dap').step_into()<CR>",opts)
-
-
+	-- debugging
+	keymap("n", "<F8>", "<cmd>lua require('dap').step_over()<CR>", opts)
+	keymap("n", "<F9>", "<cmd>lua require('dap').continue()<CR>", opts)
+	keymap("n", "<F7>", "<cmd>lua require('dap').step_into()<CR>", opts)
 else
 	-- print("Configuring which-key")
 	-- local opts = {
@@ -178,11 +176,11 @@ else
 		},
 	}, { mode = "n", prefix = "" })
 
-  wk.register({
-    t={
-      m={"<cmd>lua require('jdtls').test_nearest_method()<CR>","Run method"}
-    }
-  },{mode="n",prefix="<leader>"})
+	wk.register({
+		t = {
+			m = { "<cmd>lua require('jdtls').test_nearest_method()<CR>", "Run method" },
+		},
+	}, { mode = "n", prefix = "<leader>" })
 
 	wk.register({
 		K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
@@ -191,10 +189,10 @@ else
 	-- Toggleterm
 	keymap("n", "<F12>", "<cmd>ToggleTerm direction=float<cr>", opts)
 	keymap("n", "<F10>", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
-  -- debugging
-  keymap("n","<F8>","<cmd>lua require('dap').step_over()<CR>",opts)
-  keymap("n","<F9>","<cmd>lua require('dap').continue()<CR>",opts)
-  keymap("n","<F7>","<cmd>lua require('dap').step_into()<CR>",opts)
+	-- debugging
+	keymap("n", "<F8>", "<cmd>lua require('dap').step_over()<CR>", opts)
+	keymap("n", "<F9>", "<cmd>lua require('dap').continue()<CR>", opts)
+	keymap("n", "<F7>", "<cmd>lua require('dap').step_into()<CR>", opts)
 
 	-- DAP
 	wk.register({
@@ -240,4 +238,14 @@ else
 	keymap("v", "<TAB>", ">gv", opts)
 	keymap("n", "<TAB>", "<C-w>h", opts)
 	keymap("n", "<S-TAB>", "<C-w>l", opts)
+
+	keymap("n", "<C-j>", "<C-w>h", opts)
+	keymap("n", "<C-k>", "<C-w>j", opts)
+	keymap("n", "<C-i>", "<C-w>k", opts)
+	keymap("n", "<C-l>", "<C-w>l", opts)
+	-- Resize with arrows
+	keymap("n", "<M-Up>", ":resize -2<CR>", opts)
+	keymap("n", "<M-Down>", ":resize +2<CR>", opts)
+	keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
+	keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
 end
