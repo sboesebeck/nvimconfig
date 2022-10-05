@@ -170,9 +170,9 @@ else
 
   wk.register({
     t={
-      m={"<cmd>lua require('jdtls').test_nearest_method()"}
+      m={"<cmd>lua require('jdtls').test_nearest_method()<CR>","Run method"}
     }
-  },{model="n",prefix="<leader>"})
+  },{mode="n",prefix="<leader>"})
 
 	wk.register({
 		K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
@@ -181,6 +181,10 @@ else
 	-- Toggleterm
 	keymap("n", "<F12>", "<cmd>ToggleTerm direction=float<cr>", opts)
 	keymap("n", "<F10>", "<cmd>ToggleTerm direction=horizontal<cr>", opts)
+
+  keymap("n","<F8>","<cmd>lua require('dap').step_over()<CR>",opts)
+  keymap("n","<F9>","<cmd>lua require('dap').continue()<CR>",opts)
+  keymap("n","<F7>","<cmd>lua require('dap').step_into()<CR>",opts)
 
 	-- DAP
 	wk.register({
