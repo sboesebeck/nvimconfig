@@ -168,6 +168,12 @@ else
 		},
 	}, { mode = "n", prefix = "" })
 
+  wk.register({
+    t={
+      m={"<cmd>lua require('jdtls').test_nearest_method()"}
+    }
+  },{model="n",prefix="<leader>"})
+
 	wk.register({
 		K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
 	}, { mode = "n", prefix = "" })
