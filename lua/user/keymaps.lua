@@ -113,7 +113,7 @@ if not status_ok then
 	keymap("n", "<leader>s", "<esc>:lua require('spectre').open_visual()<CR>", opts)
 	keymap("n", "<leader>sp", "viw:lua require('spectre').open_file_search()<cr>", opts)
 else
-	print("Configuring which-key")
+	-- print("Configuring which-key")
 	-- local opts = {
 	--   mode = "n", -- NORMAL mode
 	--   -- prefix: use "<leader>f" for example for mapping everything related to finding files

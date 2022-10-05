@@ -35,6 +35,8 @@ require("mason-lspconfig").setup({
   ensure_installed = { "sumneko_lua", "rust_analyzer", "jdtls" },
 })
 
+
+-- LUA config
 lspconfig.sumneko_lua.setup({
   on_attach = on_attach_lua,
   settings = {
@@ -63,6 +65,26 @@ lspconfig.sumneko_lua.setup({
     },
   },
 })
+
+-- BASH config
+local bashlsconfig={
+  filetypes={"sh"}
+}
+
+lspconfig.bashls.setup({bashlsconfig})
+
+
+-- clangd
+local clangdconfig={
+  -- capabilities = default capabilities, with offsetEncoding utf-8,
+    cmd = { "clangd", "--background-index" },
+    filetypes = { "ino","c", "cpp", "objc", "objcpp" },
+    log_level = 2,
+    -- on_init = function to handle changing offsetEncoding
+    -- root_dir = root_pattern("compile_commands.json", "compile_flags.txt", ".git")
+    settings = {}
+}
+lspconfig.clangd.setup({clangdconfig})
 
 --
 -- function onAttachJdtls(client, bufnr)
