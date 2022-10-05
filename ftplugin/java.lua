@@ -62,14 +62,13 @@ if JAVA_DAP_ACTIVE then
 	)
 end
 
-function on_attach_jdtls(client,bufnr)
-		require("jdtls").setup_dap({ hotcodereplace = "auto" })
-		require("jdtls.dap").setup_dap_main_class_configs()
+function on_attach_jdtls(client, bufnr)
+	require("jdtls").setup_dap({ hotcodereplace = "auto" })
+	require("jdtls.dap").setup_dap_main_class_configs()
 
-		client.resolved_capabilities.document_formatting = false
-		client.resolved_capabilities.completion.completionItem.snippetSupport = false
-		vim.lsp.codelens.refresh()
-
+	client.resolved_capabilities.document_formatting = false
+	client.resolved_capabilities.completion.completionItem.snippetSupport = false
+	vim.lsp.codelens.refresh()
 end
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
@@ -114,9 +113,8 @@ local config = {
 		workspace_dir,
 	},
 
-	
 	capabilities = capabilities,
-  on_attach=on_attach_jdtls,
+	on_attach = on_attach_jdtls,
 	-- 💀
 	-- This is the default if not provided, you can remove it. Or adjust as needed.
 	-- One dedicated LSP server & client will be started per unique root_dir
@@ -212,7 +210,7 @@ local config = {
 -- or attaches to an existing client & server depending on the `root_dir`.
 jdtls.start_or_attach(config)
 
-require('jdtls').setup_dap()
+require("jdtls").setup_dap()
 
 vim.cmd(
 	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
@@ -230,47 +228,47 @@ if not status_ok then
 	return
 end
 
---local opts = {
---	mode = "n", -- NORMAL mode
---	prefix = "<leader>",
---	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
---	silent = true, -- use `silent` when creating keymaps
---	noremap = true, -- use `noremap` when creating keymaps
---	nowait = true, -- use `nowait` when creating keymaps
---}
---
---local vopts = {
---	mode = "v", -- VISUAL mode
---	prefix = "<leader>",
---	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
---	silent = true, -- use `silent` when creating keymaps
---	noremap = true, -- use `noremap` when creating keymaps
---	nowait = true, -- use `nowait` when creating keymaps
---}
---
---local mappings = {
---	L = {
---		name = "Java",
---		o = { "<Cmd>lua require'jdtls'.organize_imports()<CR>", "Organize Imports" },
---		v = { "<Cmd>lua require('jdtls').extract_variable()<CR>", "Extract Variable" },
---		c = { "<Cmd>lua require('jdtls').extract_constant()<CR>", "Extract Constant" },
---		t = { "<Cmd>lua require'jdtls'.test_nearest_method()<CR>", "Test Method" },
---		T = { "<Cmd>lua require'jdtls'.test_class()<CR>", "Test Class" },
---		u = { "<Cmd>JdtUpdateConfig<CR>", "Update Config" },
---	},
---}
---
---local vmappings = {
---	L = {
---		name = "Java",
---		v = { "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", "Extract Variable" },
---		c = { "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", "Extract Constant" },
---		m = { "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", "Extract Method" },
---	},
---}
---
---which_key.register(mappings, opts)
---which_key.register(vmappings, vopts)
+local opts = {
+	mode = "n", -- NORMAL mode
+	prefix = "<leader>",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+}
+
+local vopts = {
+	mode = "v", -- VISUAL mode
+	prefix = "<leader>",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+}
+
+local mappings = {
+	L = {
+		name = "Java",
+		o = { "<Cmd>lua require('jdtls').organize_imports()<CR>", "Organize Imports" },
+		v = { "<Cmd>lua require('jdtls').extract_variable()<CR>", "Extract Variable" },
+		c = { "<Cmd>lua require('jdtls').extract_constant()<CR>", "Extract Constant" },
+		t = { "<Cmd>lua require('jdtls').test_nearest_method()<CR>", "Test Method" },
+		T = { "<Cmd>lua require('jdtls').test_class()<CR>", "Test Class" },
+		u = { "<Cmd>JdtUpdateConfig<CR>", "Update Config" },
+	},
+}
+
+local vmappings = {
+	L = {
+		name = "Java",
+		v = { "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", "Extract Variable" },
+		c = { "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", "Extract Constant" },
+		m = { "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", "Extract Method" },
+	},
+}
+
+which_key.register(mappings, opts)
+which_key.register(vmappings, vopts)
 
 -- debugging
 -- git clone git@github.com:microsoft/java-debug.git
