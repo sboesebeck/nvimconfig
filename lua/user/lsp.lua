@@ -35,6 +35,9 @@ require("mason-lspconfig").setup({
   ensure_installed = { "sumneko_lua", "rust_analyzer", "jdtls" },
 })
 
+-- python
+-- lspconfig.pyright.setup{}
+lspconfig.pylsp.setup{}
 
 -- LUA config
 lspconfig.sumneko_lua.setup({
@@ -72,6 +75,7 @@ local bashlsconfig={
 }
 
 lspconfig.bashls.setup({bashlsconfig})
+
 
 
 -- clangd
