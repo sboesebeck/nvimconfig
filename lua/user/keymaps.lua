@@ -236,8 +236,8 @@ else
 
 	keymap("v", "<S-TAB>", "<gv", opts)
 	keymap("v", "<TAB>", ">gv", opts)
-	keymap("n", "<TAB>", "<C-w>h", opts)
-	keymap("n", "<S-TAB>", "<C-w>l", opts)
+	keymap("n", "<TAB>", ">>", opts)
+	keymap("n", "<S-TAB>", "<<", opts)
 
 	keymap("n", "<C-j>", "<C-w>h", opts)
 	keymap("n", "<C-k>", "<C-w>j", opts)
@@ -248,4 +248,11 @@ else
 	keymap("n", "<M-Down>", ":resize +2<CR>", opts)
 	keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
 	keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
+
+
+  -- hop
+  keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opts)
+  keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", opts)
+  keymap('n', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", opts)
+  keymap('n', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", opts)
 end

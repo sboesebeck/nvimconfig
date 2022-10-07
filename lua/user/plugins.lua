@@ -80,14 +80,14 @@ return packer.startup(function(use)
 	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
 
-  -- use({'zchee/deoplete-jedi'})
+	-- use({'zchee/deoplete-jedi'})
 	--[[ use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer ]]
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
 	-- Treesitter
 	use({
@@ -99,8 +99,8 @@ return packer.startup(function(use)
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "f-person/git-blame.nvim" })
-  -- use({"tpope/vim-fugitive"})
-  use ({"airblade/vim-gitgutter"})
+	-- use({"tpope/vim-fugitive"})
+	use({ "airblade/vim-gitgutter" })
 	-- DAP
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
@@ -111,8 +111,15 @@ return packer.startup(function(use)
 	-- JAVA
 	use({ "mfussenegger/nvim-jdtls" })
 
-
-  use({"folke/which-key.nvim"})
+	use({ "folke/which-key.nvim" })
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		end,
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
