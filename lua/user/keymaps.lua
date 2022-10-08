@@ -239,10 +239,15 @@ else
 	keymap("n", "<TAB>", ">>", opts)
 	keymap("n", "<S-TAB>", "<<", opts)
 
-	keymap("n", "<C-j>", "<C-w>h", opts)
-	keymap("n", "<C-k>", "<C-w>j", opts)
-	keymap("n", "<C-i>", "<C-w>k", opts)
-	keymap("n", "<C-l>", "<C-w>l", opts)
+	keymap("n", "<C-j>", "<cmd>:wincmd h<cr>", opts)
+	keymap("n", "<C-k>", "<cmd>:wincmd j<cr>", opts)
+	keymap("n", "<C-i>", "<cmd>:wincmd k<CR>", opts)
+	keymap("n", "<C-l>", "<cmd>:wincmd l<CR>", opts)
+
+	-- keymap("n", "<C-j>", "<C-w>h", opts)
+	-- keymap("n", "<C-k>", "<C-w>j", opts)
+	-- keymap("n", "<C-i>", "<C-w>k", opts)
+	-- keymap("n", "<C-l>", "<C-w>l", opts)
 	-- Resize with arrows
 	keymap("n", "<M-Up>", ":resize -2<CR>", opts)
 	keymap("n", "<M-Down>", ":resize +2<CR>", opts)

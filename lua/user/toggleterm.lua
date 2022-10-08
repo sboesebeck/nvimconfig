@@ -29,6 +29,8 @@ function _G.set_terminal_keymaps()
 	-- vim.api.nvim_buf_set_keymap(0, "t", "<M-l>", [[<F12><C-n><C-W>l]], opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<F10>", "<cmd>:ToggleTerm<cr>", opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<F12>", "<cmd>:ToggleTerm<cr>", opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<TAB>", "<TAB>", opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<S-TAB>", "<S-TAB>", opts)
 	-- vim.api.nvim_buf_set_keymap(0, "t", "<TAB>", "<C-w>h", opts)
 	-- vim.api.nvim_buf_set_keymap(0, "t", "<S-TAB>", "<C-w>l", opts)
 
