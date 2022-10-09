@@ -94,6 +94,8 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 	})
 
+  -- Notetaking
+  use({'lervag/wiki.vim'})
 	use({ "nacro90/numb.nvim" })
 	use({ "karb94/neoscroll.nvim" })
 	-- Git
