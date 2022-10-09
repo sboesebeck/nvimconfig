@@ -95,7 +95,9 @@ return packer.startup(function(use)
 	})
 
   -- Notetaking
-  use({'lervag/wiki.vim'})
+  -- use({'lervag/wiki.vim'})
+
+  -- utils
 	use({ "nacro90/numb.nvim" })
 	use({ "karb94/neoscroll.nvim" })
 	-- Git
