@@ -13,7 +13,6 @@ if not dap_install_status_ok then
 	return
 end
 
-
 dap_install.setup({})
 
 dap_install.config("python", {})
@@ -42,12 +41,17 @@ dap_install.config("python", {})
 --     end;
 --   },
 -- }
-
+dap.adapters.sh = {
+	type = "executable",
+	command = vim.fn.stdpath("data") .. "/mason/bin/bash-debug-adapter",
+}
+-- print( vim.fn.stdpath "data" .."/mason/bin/bash-debug-adapter")
+dap.configurations.sh = { { name = "Bash", type = "sh", request = "launch", program = "${file}" } }
 
 -- require("dap-python").setup('/Users/stephan/.virtualenvs/debugpy/bin/python')
-require("dap-python").setup('/opt/homebrew/opt/python@3.10/bin/python3')
+require("dap-python").setup("/opt/homebrew/opt/python@3.10/bin/python3")
 print("setting log-level for dap")
-require('dap').set_log_level('TRACE')
+require("dap").set_log_level("TRACE")
 
 -- add other configs here
 require("dapui").setup({

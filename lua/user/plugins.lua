@@ -70,7 +70,7 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
-
+	use({ "sbdchd/neoformat" })
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
@@ -94,10 +94,10 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 	})
 
-  -- Notetaking
-  -- use({'lervag/wiki.vim'})
+	-- Notetaking
+	-- use({'lervag/wiki.vim'})
 
-  -- utils
+	-- utils
 	use({ "nacro90/numb.nvim" })
 	use({ "karb94/neoscroll.nvim" })
 	-- Git
@@ -109,13 +109,14 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap" })
 	use({ "rcarriga/nvim-dap-ui" })
 	use({ "ravenxrz/DAPInstall.nvim" })
-  use({ "mfussenegger/nvim-dap-python"})
-  -- use({"HiPhish/debugpy.nvim"})
+	use({ "mfussenegger/nvim-dap-python" })
+	-- use({"HiPhish/debugpy.nvim"})
 	use({ "MattesGroeger/vim-bookmarks" })
 
 	-- JAVA
 	use({ "mfussenegger/nvim-jdtls" })
 
+	-- tools
 	use({ "folke/which-key.nvim" })
 	use({
 		"phaazon/hop.nvim",
@@ -123,6 +124,13 @@ return packer.startup(function(use)
 		config = function()
 			-- you can configure Hop the way you like here; see :h hop-config
 			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		end,
+	})
+
+	use({
+		"andrewferrier/wrapping.nvim",
+		config = function()
+			require("wrapping").setup()
 		end,
 	})
 	-- Automatically set up your configuration after cloning packer.nvim
