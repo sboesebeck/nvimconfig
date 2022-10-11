@@ -50,7 +50,7 @@ dap.configurations.sh = { { name = "Bash", type = "sh", request = "launch", prog
 
 -- require("dap-python").setup('/Users/stephan/.virtualenvs/debugpy/bin/python')
 require("dap-python").setup("/opt/homebrew/opt/python@3.10/bin/python3")
-print("setting log-level for dap")
+-- print("setting log-level for dap")
 require("dap").set_log_level("TRACE")
 
 -- add other configs here

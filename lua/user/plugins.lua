@@ -126,7 +126,12 @@ return packer.startup(function(use)
 			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 		end,
 	})
-
+  use({'jakewvincent/mkdnflow.nvim',
+    -- rocks = 'luautf8', -- Ensures optional luautf8 dependency is installed
+    config = function()
+        require('mkdnflow').setup({})
+    end
+})
 	use({
 		"andrewferrier/wrapping.nvim",
 		config = function()
