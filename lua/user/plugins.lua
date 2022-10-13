@@ -100,6 +100,12 @@ return packer.startup(function(use)
 	-- utils
 	use({ "nacro90/numb.nvim" })
 	use({ "karb94/neoscroll.nvim" })
+	use({
+		"https://github.com/nat-418/boole.nvim",
+		config = function()
+			require("boole").setup()
+		end,
+	})
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "f-person/git-blame.nvim" })
@@ -126,16 +132,24 @@ return packer.startup(function(use)
 			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 		end,
 	})
-  use({'jakewvincent/mkdnflow.nvim',
-    -- rocks = 'luautf8', -- Ensures optional luautf8 dependency is installed
-    config = function()
-        require('mkdnflow').setup({})
-    end
-})
+	use({
+		"jakewvincent/mkdnflow.nvim",
+		-- rocks = 'luautf8', -- Ensures optional luautf8 dependency is installed
+		config = function()
+			require("mkdnflow").setup({})
+		end,
+	})
 	use({
 		"andrewferrier/wrapping.nvim",
 		config = function()
 			require("wrapping").setup()
+		end,
+	})
+
+	use({
+		"nagy135/typebreak.nvim",
+		config = function()
+			vim.keymap.set("n", "<leader>tb", require("typebreak").start, { desc = "Typebreak" })
 		end,
 	})
 	-- Automatically set up your configuration after cloning packer.nvim
