@@ -37,6 +37,13 @@ require("mason-lspconfig").setup({
 
 -- python
 -- lspconfig.pyright.setup{}
+local function on_attach_pyright(client,bufnr)
+  
+end
+lspconfig.pyright.setup{
+  on_attach = on_attach_pyright
+
+}
 lspconfig.pylsp.setup{}
 
 -- LUA config
