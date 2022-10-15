@@ -1,3 +1,4 @@
+require("user.globals")
 require("user.options")
 require("user.plugins")
 require("user.whichkey")
