@@ -29,3 +29,5 @@ require("user.neoscroll")
 -- require("mason").setup() ]]
 
 -- require("neoscroll").setup()
+require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+
