@@ -36,7 +36,7 @@ if not status_ok then
 
 	-- Navigate buffers
 	keymap("n", "<S-l>", ":bnext<CR>", opts)
-	keymap("n", "<S-j>", ":bprevious<CR>", opts)
+	keymap("n", "<S-k>", ":bprevious<CR>", opts)
 	keymap("n", "<S-c>", ":close<CR>", opts)
 
 	-- Clear highlights
