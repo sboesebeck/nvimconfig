@@ -19,10 +19,10 @@ if not status_ok then
 
 	-- Normal --
 	-- Better window navigation
-	keymap("n", "<C-j>", "<C-w>h", opts)
-	keymap("n", "<C-k>", "<C-w>j", opts)
-	keymap("n", "<C-i>", "<C-w>k", opts)
-	keymap("n", "<C-l>", "<C-w>l", opts)
+	keymap("n", "<leader>wj", "<C-w>h", opts)
+	keymap("n", "<leader>wk", "<C-w>j", opts)
+	keymap("n", "<leader>wi", "<C-w>k", opts)
+	keymap("n", "<leader>wl", "<C-w>l", opts)
 	keymap("n", "<leader>j", "<C-w>h", opts)
 	keymap("n", "<leader>k", "<C-w>j", opts)
 	keymap("n", "<leader>i", "<C-w>k", opts)
@@ -234,15 +234,24 @@ else
 	-- Git
 	-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
+
 	keymap("v", "<S-TAB>", "<gv", opts)
 	keymap("v", "<TAB>", ">gv", opts)
 	keymap("n", "<TAB>", ">>", opts)
 	keymap("n", "<S-TAB>", "<<", opts)
 
-	keymap("n", "<C-j>", "<cmd>:wincmd h<cr>", opts)
-	keymap("n", "<C-k>", "<cmd>:wincmd j<cr>", opts)
-	keymap("n", "<C-i>", "<cmd>:wincmd k<CR>", opts)
-	keymap("n", "<C-l>", "<cmd>:wincmd l<CR>", opts)
+  wk.register({
+    w={
+      j={":wincmd h<cr>","Window to the left"},
+      k={":wincmd j<cr>","Window to the right"},
+      i={":wincmd k<cr>","Window down"},
+      l={":wincmd l<cr>","Window up"},
+    }
+  },{mode="n",prefix="<leader>"})
+	-- keymap("n", "<C-j>", "<cmd>:wincmd h<cr>", opts)
+	-- keymap("n", "<C-k>", "<cmd>:wincmd j<cr>", opts)
+	-- keymap("n", "<C-i>", "<cmd>:wincmd k<CR>", opts)
+	-- keymap("n", "<C-l>", "<cmd>:wincmd l<CR>", opts)
 
 	-- keymap("n", "<C-j>", "<C-w>h", opts)
 	-- keymap("n", "<C-k>", "<C-w>j", opts)
