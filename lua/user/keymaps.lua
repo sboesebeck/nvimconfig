@@ -221,7 +221,7 @@ else
 	-- Buffers
 	wk.register({
 		L = { ":bnext<CR>", "next buffer" },
-		J = { ":bprevious<CR>", "previous buffer" },
+		K = { ":bprevious<CR>", "previous buffer" },
 		C = { ":close<CR>", "close buffer" },
 		Q = { "<cmd>Bdelete!<CR>", "Delete Buffer" },
 	}, { mode = "n", prefix = "" })
