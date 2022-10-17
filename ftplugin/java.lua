@@ -66,8 +66,8 @@ function on_attach_jdtls(client, bufnr)
 	require("jdtls").setup_dap({ hotcodereplace = "auto" })
 	require("jdtls.dap").setup_dap_main_class_configs()
 
-	client.resolved_capabilities.document_formatting = false
-	client.resolved_capabilities.completion.completionItem.snippetSupport = false
+	client.server_capabilities.document_formatting = false
+	client.server_capabilities.completion.completionItem.snippetSupport = false
 	vim.lsp.codelens.refresh()
 end
 
