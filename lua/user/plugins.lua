@@ -133,7 +133,6 @@ return packer.startup(function(use)
 		end,
 	})
 
-  use({'dhruvasagar/vim-table-mode'})
 	use({
 		"jakewvincent/mkdnflow.nvim",
 		-- rocks = 'luautf8', -- Ensures optional luautf8 dependency is installed
