@@ -42,14 +42,35 @@ null_ls.register({
 		-- null_ls.builtins.diagnostics.markdownlint_cli2,
 		-- null_ls.builtins.diagnostics.mdl,
 		-- null_ls.builtins.formatting.cbfmt,
-    null_ls.builtins.formatting.dprint,
+		null_ls.builtins.formatting.dprint,
 		null_ls.builtins.diagnostics.cspell,
 		null_ls.builtins.code_actions.cspell,
-    null_ls.builtins.completion.spell,
-    -- null_ls.builtins.diagnostics.codespell,
-
+		null_ls.builtins.completion.spell,
+		-- null_ls.builtins.diagnostics.codespell,
 	},
 })
+
+-- local ijformatter = {}
+-- ijformatter.method = null_ls.methods.FORMATTING
+-- ijformatter.generator = {
+-- 	fn = function(params)
+--     print("Running formatter for intellij")
+--     P(params)
+-- 		return {
+-- 			{
+--         text="Wonderful"
+-- 			},
+-- 		}
+-- 	end,
+-- }
+--
+-- null_ls.register({
+-- 	name = "Java IntelliJ formatter",
+-- 	filetypes = { "java" },
+-- 	sources = {
+-- 		ijformatter,
+-- 	},
+-- })
 
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 null_ls.setup({
@@ -61,10 +82,11 @@ null_ls.setup({
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-    formatting.astyle.with({extra_args= {"--options=/Users/stephan/.config/nvim/astlye.cfg"}}),
-    -- formatting.clang_format,
+		formatting.astyle.with({extra_args= {"--options=/Users/stephan/.config/nvim/astlye.cfg"}}),
+		-- formatting.clang_format,
+    formatting.prettier,
 		-- formatting.google_java_format.with({ extra_args = { "-a" } }),
 		diagnostics.flake8,
-    -- diagnostics.semgrep,
+		-- diagnostics.semgrep,
 	},
 })
