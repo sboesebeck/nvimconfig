@@ -264,6 +264,13 @@ else
 	keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
 
 
+  -- TableMode
+  wk.register({
+    t={
+      m={":TableModeToggle<cr>"},
+    }
+  },{mode="n",prefix="<leader>"})
+
   -- hop
   -- keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opts)
   -- keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", opts)

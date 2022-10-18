@@ -132,6 +132,8 @@ return packer.startup(function(use)
 			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 		end,
 	})
+
+  use({'dhruvasagar/vim-table-mode'})
 	use({
 		"jakewvincent/mkdnflow.nvim",
 		-- rocks = 'luautf8', -- Ensures optional luautf8 dependency is installed
