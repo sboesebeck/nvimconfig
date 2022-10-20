@@ -42,3 +42,5 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 
 vim.opt.spelllang={ "de","en" }
+
+vim.o.relativenumber = true
