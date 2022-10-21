@@ -171,6 +171,36 @@ else
 	-- keymap('n', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false, hint_offset = 1 })<cr>", opts)
 	-- keymap("n", "f", "<cmd>:HopChar1<cr>", opts)
 	-- keymap("n", "t", "<cmd>:HopChar2<cr>", opts)
-	keymap("n", "<leader>F", "<cmd>:HopWord<cr>", opts)
-	keymap("n", "<leader>T", "<cmd>:HopLine<cr>", opts)
+
+	wk.register({
+		g = {
+			f = { "<cmd>:HopChar1<CR>", "Hop char" },
+			w = { "<cmd>:HopWord<CR>", "Hop word" },
+			l = { "<cmd>:HopLine<CR>", "Hop Line" },
+		},
+	}, { mode = "n", prefix = "<leader>" })
+
+	-- Neoscroll
+
+	local t = {}
+	-- Syntax: t[keys] = {function, {function arguments}}
+	t["<PAGEUP>"] = { "scroll", { "-vim.wo.scroll", "true", "250", [['sine']] } }
+	t["<PAGEDOWN>"] = { "scroll", { "vim.wo.scroll", "true", "250", [['sine']] } }
+	t["<C-PAGEUP>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450", [['circular']] } }
+	t["<C-PAGEDOWN>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450", [['circular']] } }
+	-- t["<C-y>"] = { "scroll", { "-0.10", "false", "100", [['cubic']] } }
+	-- t["<C-e>"] = { "scroll", { "0.10", "false", "100", [['cubic']] } }
+	t["zt"] = { "zt", { "250" } }
+	t["zz"] = { "zz", { "250" } }
+	t["zb"] = { "zb", { "250" } }
+
+	require("neoscroll.config").set_mappings(t)
+  keymap("i","<PAGEUP>","<cmd>lua require('neoscroll').scroll(-vim.wo.scroll,'true','250',[['sine']])<CR>")
+  keymap("i","<PAGEDOWN>","<cmd>lua require('neoscroll').scroll(vim.wo.scroll,'true','250',[['sine']])<CR>")
+  -- Shift or Ctrl-Pageup/down not working
+  -- keymap("i","<C-PAGEUP", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
+  -- keymap("i","<S-PAGEUP", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
+  -- keymap("i","<C-PAGEDOWN", "<cmd>lua require('neoscroll').scroll(vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
+
+
 end
