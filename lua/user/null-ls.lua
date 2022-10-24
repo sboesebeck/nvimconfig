@@ -86,8 +86,10 @@ null_ls.setup({
 		-- formatting.clang_format,
     formatting.uncrustify, -- uses ~/.uncrustify.cfg as default .with({extra_args= {"-c /Users/stephan/.config/nvim/uncrustify.cfg"}}),
     formatting.prettier,
+    formatting.xmllint,
 		-- formatting.google_java_format.with({ extra_args = { "-a" } }),
 		diagnostics.flake8,
 		diagnostics.semgrep,
+    diagnostics.tidy,
 	},
 })
