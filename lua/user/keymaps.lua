@@ -145,8 +145,8 @@ else
 		w = {
 			h = { ":wincmd h<cr>", "Window to the left" },
 			j = { ":wincmd j<cr>", "Window to the right" },
-			k = { ":wincmd k<cr>", "Window down" },
-			l = { ":wincmd l<cr>", "Window up" },
+			k = { ":wincmd k<cr>", "Window up" },
+			l = { ":wincmd l<cr>", "Window down" },
 		},
 	}, { mode = "n", prefix = "<leader>" })
 	-- keymap("n", "<C-j>", "<cmd>:wincmd h<cr>", opts)
