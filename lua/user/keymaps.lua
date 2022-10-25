@@ -131,7 +131,9 @@ else
 	-- NvimTree
 	wk.register({
 		e = { ":NvimTreeToggle<CR>", "Explorer" },
-		gg = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    gg = { "<cmd>LazyGit<CR>","Lazygit"},
+    gh = { "<cmd>LazyGitFilterCurrentFile<CR>","Git history current file"}
+		-- gg = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 	}, { mode = "n", prefix = "<leader>" })
 	-- Git
 	-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
