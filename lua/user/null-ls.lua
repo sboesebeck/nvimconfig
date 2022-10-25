@@ -12,7 +12,7 @@ null_ls.register({
 	filetypes = { "sh" },
 	sources = {
 		null_ls.builtins.formatting.shfmt,
-		null_ls.builtins.formatting.shellharden,
+		-- null_ls.builtins.formatting.shellharden,
 		null_ls.builtins.diagnostics.shellcheck,
 		null_ls.builtins.hover.printenv,
 	},
@@ -82,7 +82,7 @@ null_ls.setup({
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-		-- formatting.astyle.with({extra_args= {"--options=/Users/stephan/.config/nvim/astlye.cfg"}}),
+		formatting.astyle.with({extra_args= {"--options=/Users/stephan/.config/nvim/astlye.cfg"}}),
 		-- formatting.clang_format,
     formatting.uncrustify, -- uses ~/.uncrustify.cfg as default .with({extra_args= {"-c /Users/stephan/.config/nvim/uncrustify.cfg"}}),
     formatting.prettier,
