@@ -106,26 +106,12 @@ else
 		},
 	}, { mode = "n", prefix = "<leader>" })
 
-	--window navigation
-	wk.register({
-		-- j = { "<C-w>h", "Window left" },
-		-- k = { "<C-w>j", "Window down" },
-		-- i = { "<C-w>k", "Window up" },
-		-- l = { "<C-w>l", "Window right" },
-		h = { "<cmd>nohlsearch<CR>", "no highlight search" },
-	}, { mode = "n", prefix = "<leader>" })
-
-	-- Buffers
-	-- wk.register({
-	-- 	L = { ":bnext<CR>", "next buffer" },
-	-- 	K = { ":bprevious<CR>", "previous buffer" },
-	-- 	C = { ":close<CR>", "close buffer" },
-	-- 	Q = { "<cmd>Bdelete!<CR>", "Delete Buffer" },
-	-- }, { mode = "n", prefix = "" })
 
 	wk.register({
 		H = { ":bprevious<CR>", "previous buffer" },
 		L = { ":bnext<CR>", "next buffer" },
+	 	Q = { "<cmd>Bdelete!<CR>", "Delete Buffer" },
+		h = { "<cmd>nohlsearch<CR>", "no highlight search" },
 	}, { mode = "n", prefix = "" })
 
 	-- NvimTree
