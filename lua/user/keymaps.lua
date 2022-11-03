@@ -111,14 +111,14 @@ else
 		H = { ":bprevious<CR>", "previous buffer" },
 		L = { ":bnext<CR>", "next buffer" },
 	 	Q = { "<cmd>Bdelete!<CR>", "Delete Buffer" },
-		h = { "<cmd>nohlsearch<CR>", "no highlight search" },
 	}, { mode = "n", prefix = "" })
 
 	-- NvimTree
 	wk.register({
 		e = { ":NvimTreeToggle<CR>", "Explorer" },
     gg = { "<cmd>LazyGit<CR>","Lazygit"},
-    gh = { "<cmd>LazyGitFilterCurrentFile<CR>","Git history current file"}
+    gh = { "<cmd>LazyGitFilterCurrentFile<CR>","Git history current file"},
+		h = { "<cmd>nohlsearch<CR>", "no highlight search" },
 		-- gg = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 	}, { mode = "n", prefix = "<leader>" })
 	-- Git
