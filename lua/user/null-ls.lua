@@ -43,7 +43,7 @@ null_ls.register({
 		-- null_ls.builtins.diagnostics.mdl,
 		-- null_ls.builtins.formatting.cbfmt,
 		null_ls.builtins.formatting.dprint,
-		null_ls.builtins.diagnostics.cspell,
+		-- null_ls.builtins.diagnostics.cspell,
 		null_ls.builtins.code_actions.cspell,
 		null_ls.builtins.completion.spell,
 		-- null_ls.builtins.diagnostics.codespell,
