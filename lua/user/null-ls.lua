@@ -84,7 +84,7 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.astyle.with({extra_args= {"--options=/Users/stephan/.config/nvim/astlye.cfg"}}),
 		-- formatting.clang_format,
-    formatting.uncrustify, -- uses ~/.uncrustify.cfg as default .with({extra_args= {"-c /Users/stephan/.config/nvim/uncrustify.cfg"}}),
+    -- formatting.uncrustify, -- uses ~/.uncrustify.cfg as default .with({extra_args= {"-c /Users/stephan/.config/nvim/uncrustify.cfg"}}),
     formatting.prettier,
     formatting.xmllint,
 		-- formatting.google_java_format.with({ extra_args = { "-a" } }),
