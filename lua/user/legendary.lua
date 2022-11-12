@@ -13,11 +13,11 @@ legend.setup({
     -- keymaps have opts.silent = true by default, but you can override it
     -- { '<leader>s', ':SomeCommand<CR>', description = 'Non-silent keymap', opts = { silent = false } },
     -- create keymaps with different implementations per-mode
-    -- {
-    --   '<leader>c',
-    --   { n = ':LinewiseCommentToggle<CR>', x = ":'<,'>BlockwiseCommentToggle<CR>" },
-    --   description = 'Toggle comment'
-    -- },
+    {
+      '<leader>c',
+      { n = ':lua require("Comment.api").toggle.linewise()<CR>', v = ":'<,'>:lua require('Comment.api').toggle.blockwise()<CR>" },
+      description = 'Toggle comment'
+    },
   },
   commands = {
     -- easily create user commands
