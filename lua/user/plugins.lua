@@ -45,6 +45,8 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-spectre" })
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim" })
+  use {'stevearc/dressing.nvim'}
+  use({ 'mrjones2014/legendary.nvim' })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "ahmedkhalf/project.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
