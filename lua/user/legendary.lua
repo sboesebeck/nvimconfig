@@ -15,9 +15,12 @@ legend.setup({
     -- create keymaps with different implementations per-mode
     {
       '<leader>c',
-      { n = ':lua require("Comment.api").toggle.linewise()<CR>', v = ":'<,'>:lua require('Comment.api').toggle.blockwise()<CR>" },
+      { n = ':lua require("Comment.api").toggle.linewise()<CR>', v = "<Plug>(comment_toggle_linewise_visual)" },
       description = 'Toggle comment'
     },
+    {
+      '<leader>fh', { n= '<CMD>Legendary.toolbox()<CR>'}, description="Command window"
+    }
   },
   commands = {
     -- easily create user commands
