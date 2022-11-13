@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-spectre" })
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim" })
-  use {'stevearc/dressing.nvim'}
+  use({'stevearc/dressing.nvim'})
   use({ 'mrjones2014/legendary.nvim' })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "ahmedkhalf/project.nvim" })
@@ -112,6 +112,7 @@ return packer.startup(function(use)
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "f-person/git-blame.nvim" })
   use({ 'kdheepak/lazygit.nvim' })
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 	-- use({"tpope/vim-fugitive"})
 	use({ "airblade/vim-gitgutter" })
 	-- DAP

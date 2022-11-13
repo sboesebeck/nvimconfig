@@ -28,6 +28,7 @@ require("user.numb")
 require("user.neoscroll")
 require("user.dressing")
 require("user.legendary")
+require("user.neogit")
 -- require("mason").setup() ]]
 
 -- require("neoscroll").setup()
