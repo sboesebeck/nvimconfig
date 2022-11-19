@@ -37,6 +37,7 @@ else
 			t = { "<cmd>Telescope live_grep<cr>", "Search for text" },
 			p = { "<cmd>Telescope projects<cr>", "Show projects" },
 			b = { "<cmd>Telescope buffers<cr>", "Show buffer" },
+      n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager"}
 		},
 	}, { mode = "n", prefix = "<leader>" })
 

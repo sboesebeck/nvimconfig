@@ -60,7 +60,7 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
-
+  use({ "j-morano/buffer_manager.nvim"})
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
