@@ -5,6 +5,9 @@ local opts = { silent = true }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
+
+keymap("i","jk","<ESC>",opts)
+keymap("i","kj","<ESC>",opts)
 vim.g.mapleader = " "
 -- keymap("n","<PageDown>","<C-d>",opts)
 local status_ok, wk = pcall(require, "which-key")
