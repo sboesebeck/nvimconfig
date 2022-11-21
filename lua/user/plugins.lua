@@ -45,8 +45,8 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-spectre" })
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim" })
-  use({'stevearc/dressing.nvim'})
-  use({ 'mrjones2014/legendary.nvim' })
+	use({ "stevearc/dressing.nvim" })
+	-- use({ "mrjones2014/legendary.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "ahmedkhalf/project.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
@@ -60,7 +60,7 @@ return packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
-  use({ "j-morano/buffer_manager.nvim"})
+	use({ "j-morano/buffer_manager.nvim" })
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
 	use({ "lunarvim/darkplus.nvim" })
@@ -78,6 +78,17 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	-- LSP
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		-- config = function()
+		-- 	require("trouble").setup({
+		-- 		-- your configuration comes here
+		-- 		-- or leave it empty to use the default settings
+		-- 		-- refer to the configuration section below
+		-- 	})
+		-- end,
+	})
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
@@ -111,8 +122,8 @@ return packer.startup(function(use)
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 	use({ "f-person/git-blame.nvim" })
-  use({ 'kdheepak/lazygit.nvim' })
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+	use({ "kdheepak/lazygit.nvim" })
+	use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 	-- use({"tpope/vim-fugitive"})
 	use({ "airblade/vim-gitgutter" })
 	-- DAP
