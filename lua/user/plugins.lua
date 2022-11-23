@@ -39,6 +39,7 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
+	use({ "lewis6991/impatient.nvim" })
 	-- My plugins here
 	use({ "wbthomason/packer.nvim" }) -- Have packer manage itself
 	use({ "nvim-lua/plenary.nvim" }) -- Useful lua functions used by lots of plugins
@@ -46,7 +47,7 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim" })
 	use({ "stevearc/dressing.nvim" })
-	-- use({ "mrjones2014/legendary.nvim" })
+	use({ "mrjones2014/legendary.nvim" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 	use({ "ahmedkhalf/project.nvim" })
 	use({ "kyazdani42/nvim-web-devicons" })
@@ -57,7 +58,6 @@ return packer.startup(function(use)
 
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/toggleterm.nvim" })
-	use({ "lewis6991/impatient.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
 	use({ "j-morano/buffer_manager.nvim" })
