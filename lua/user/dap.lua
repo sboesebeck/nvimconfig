@@ -48,6 +48,22 @@ dap.adapters.sh = {
 -- print( vim.fn.stdpath "data" .."/mason/bin/bash-debug-adapter")
 dap.configurations.sh = { { name = "Bash", type = "sh", request = "launch", program = "${file}" } }
 
+-- dap.adapters.lldb = {
+--   type = 'executable',
+--   command = '/usr/bin/lldb', -- adjust as needed
+--   name = "lldb"
+-- }
+--
+-- dap.configurations.rust={{name="Rust Debug",type="lldb",request="launch",program = function()
+--             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/' .. '')
+--         end,
+--         cwd = '${workspaceFolder}',
+--         stopOnEntry = false,
+--         args = {},
+--         initCommand = {},
+--         runInTerminal = false
+-- }}
+
 -- require("dap-python").setup('/Users/stephan/.virtualenvs/debugpy/bin/python')
 require("dap-python").setup("/opt/homebrew/opt/python@3.10/bin/python3")
 -- print("setting log-level for dap")
