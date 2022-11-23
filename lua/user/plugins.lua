@@ -92,7 +92,7 @@ return packer.startup(function(use)
 	use({ "williamboman/mason.nvim" })
 	use({ "williamboman/mason-lspconfig.nvim" })
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
-
+  use({ "simrat39/rust-tools.nvim"})
 	-- use({'zchee/deoplete-jedi'})
 	--[[ use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer ]]
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
