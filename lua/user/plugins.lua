@@ -63,8 +63,10 @@ return packer.startup(function(use)
 	use({ "j-morano/buffer_manager.nvim" })
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim" })
-	use({ "lunarvim/darkplus.nvim" })
-
+	-- use({ "lunarvim/darkplus.nvim" })
+ --    use({ "danilo-augusto/vim-afterglow"})
+ --    use({ 'jacoborus/tender.vim'})
+ --    use({'christophermca/meta5'})
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
