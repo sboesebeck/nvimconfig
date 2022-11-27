@@ -121,7 +121,6 @@ return packer.startup(function(use)
     -- 	end,
     -- })
     -- Git
-    use({ "ldelossa/nvim-ide" })
     use({ "lewis6991/gitsigns.nvim" })
     use({ "f-person/git-blame.nvim" })
     use({ "kdheepak/lazygit.nvim" })
@@ -163,6 +162,7 @@ return packer.startup(function(use)
             require("wrapping").setup()
         end,
     })
+    -- use({ "ldelossa/nvim-ide" })
 
     -- use({
     -- 	"nagy135/typebreak.nvim",

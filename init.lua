@@ -31,7 +31,7 @@ require("user.legendary")
 require("user.neogit")
 require("user.trouble")
 require("user.rusttools")
-require("user.ide")
+-- require("user.ide")
 -- require("mason").setup() ]]
 
 -- require("neoscroll").setup()
