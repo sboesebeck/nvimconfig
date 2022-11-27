@@ -31,8 +31,9 @@ require("user.legendary")
 require("user.neogit")
 require("user.trouble")
 require("user.rusttools")
-require("user.aerial")
--- require("user.ide")
+-- require("user.aerial")
+require("user.ide")
+require("user.symbols_outline")
 -- require("mason").setup() ]]
 
 -- require("neoscroll").setup()

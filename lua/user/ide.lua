@@ -10,7 +10,7 @@ local outline         = require('ide.components.outline')
 local callhierarchy   = require('ide.components.callhierarchy')
 local timeline        = require('ide.components.timeline')
 local terminal        = require('ide.components.terminal')
--- local terminalbrowser = require('ide.components.terminal.terminalbrowser')
+local terminalbrowser = require('ide.components.terminal.terminalbrowser')
 local changes         = require('ide.components.changes')
 local commits         = require('ide.components.commits')
 local branches        = require('ide.components.branches')
@@ -29,14 +29,15 @@ ide.setup({
     panels = {
         left = "explorer",
         right = "git",
-        bottom = "git"
+        bottom = "terminal"
     },
     -- panels defined by groups of components, user is free to redefine these
     -- or add more.
     panel_groups = {
-        explorer = { outline.Name, explorer.Name, bookmarks.Name, callhierarchy.Name },
+        explorer = { outline.Name, explorer.Name, callhierarchy.Name },
         -- explorer = { outline.Name, explorer.Name, bookmarks.Name, callhierarchy.Name, terminalbrowser.Name },
-        -- terminal = { terminal.Name },
-        git = { changes.Name, commits.Name, timeline.Name, branches.Name }
+        btm = { bookmarks.Name,terminalbrowser.Name},
+        terminal = { terminal.Name },
+        -- git = { changes.Name, commits.Name, timeline.Name, branches.Name }
     }
 })
