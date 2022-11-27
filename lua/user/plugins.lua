@@ -139,6 +139,7 @@ return packer.startup(function(use)
     use({ "mfussenegger/nvim-jdtls" })
 
     -- tools
+    use({ 'stevearc/aerial.nvim' })
     use({ "folke/which-key.nvim" })
     use({
         "phaazon/hop.nvim",
