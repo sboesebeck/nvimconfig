@@ -50,6 +50,7 @@ else
 			s = { "<cmd>lua require('spectre').open()<cr>", "Search/Replace" },
 			w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search/Replace Word" },
 			p = { "<cmd>lua require('spectre').open_file_search()<cr>", "File Search" },
+            y = { "<cmd>SymbolsOutline<cr>", "Show outline" },
 		},
 	}, { mode = "n", prefix = "<leader>" })
 	wk.register({
