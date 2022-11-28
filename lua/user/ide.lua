@@ -1,6 +1,6 @@
 local status_ok, ide = pcall(require, "ide")
 if not status_ok then
-  print("nvim_ide not installed!")
+  -- print("nvim_ide not installed!")
   return
 end
 
