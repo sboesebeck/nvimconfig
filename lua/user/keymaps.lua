@@ -6,8 +6,8 @@ local opts = { silent = true }
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 
-keymap("i","jk","<ESC>",opts)
-keymap("i","kj","<ESC>",opts)
+keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
 vim.g.mapleader = " "
 -- keymap("n","<PageDown>","<C-d>",opts)
 local status_ok, wk = pcall(require, "which-key")
@@ -40,7 +40,7 @@ else
 			t = { "<cmd>Telescope live_grep<cr>", "Search for text" },
 			p = { "<cmd>Telescope projects<cr>", "Show projects" },
 			b = { "<cmd>Telescope buffers<cr>", "Show buffer" },
-      n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager"}
+			n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
 		},
 	}, { mode = "n", prefix = "<leader>" })
 
@@ -50,7 +50,7 @@ else
 			s = { "<cmd>lua require('spectre').open()<cr>", "Search/Replace" },
 			w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search/Replace Word" },
 			p = { "<cmd>lua require('spectre').open_file_search()<cr>", "File Search" },
-            y = { "<cmd>SymbolsOutline<cr>", "Show outline" },
+			y = { "<cmd>SymbolsOutline<cr>", "Show outline" },
 		},
 	}, { mode = "n", prefix = "<leader>" })
 	wk.register({
@@ -111,18 +111,18 @@ else
 		},
 	}, { mode = "n", prefix = "<leader>" })
 
-
 	wk.register({
-		H = { ":bprevious<CR>", "previous buffer" },
-		L = { ":bnext<CR>", "next buffer" },
-	 	Q = { "<cmd>Bdelete!<CR>", "Delete Buffer" },
-	}, { mode = "n", prefix = "" })
+		z = { ":bprevious<CR>", "previous buffer" },
+		u = { ":bnext<CR>", "next buffer" },
+		Q = { "<cmd>Bdelete!<CR>", "Delete Buffer" },
+		q = { "<cmd>close<CR>", "Close Buffer" },
+	}, { mode = "n", prefix = "<leader>" })
 
 	-- NvimTree
 	wk.register({
 		e = { ":NvimTreeToggle<CR>", "Explorer" },
-    gg = { "<cmd>LazyGit<CR>","Lazygit"},
-    gh = { "<cmd>LazyGitFilterCurrentFile<CR>","Git history current file"},
+		gg = { "<cmd>LazyGit<CR>", "Lazygit" },
+		gh = { "<cmd>LazyGitFilterCurrentFile<CR>", "Git history current file" },
 		h = { "<cmd>nohlsearch<CR>", "no highlight search" },
 		-- gg = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 	}, { mode = "n", prefix = "<leader>" })
@@ -188,12 +188,10 @@ else
 	t["zb"] = { "zb", { "250" } }
 
 	require("neoscroll.config").set_mappings(t)
-  keymap("i","<PAGEUP>","<cmd>lua require('neoscroll').scroll(-vim.wo.scroll,'true','250',[['sine']])<CR>")
-  keymap("i","<PAGEDOWN>","<cmd>lua require('neoscroll').scroll(vim.wo.scroll,'true','250',[['sine']])<CR>")
-  -- Shift or Ctrl-Pageup/down not working
-  -- keymap("i","<C-PAGEUP", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
-  -- keymap("i","<S-PAGEUP", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
-  -- keymap("i","<C-PAGEDOWN", "<cmd>lua require('neoscroll').scroll(vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
-
-
+	keymap("i", "<PAGEUP>", "<cmd>lua require('neoscroll').scroll(-vim.wo.scroll,'true','250',[['sine']])<CR>")
+	keymap("i", "<PAGEDOWN>", "<cmd>lua require('neoscroll').scroll(vim.wo.scroll,'true','250',[['sine']])<CR>")
+	-- Shift or Ctrl-Pageup/down not working
+	-- keymap("i","<C-PAGEUP", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
+	-- keymap("i","<S-PAGEUP", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
+	-- keymap("i","<C-PAGEDOWN", "<cmd>lua require('neoscroll').scroll(vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
 end
