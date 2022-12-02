@@ -142,8 +142,8 @@ else
 
 	keymap("v", "<S-TAB>", "<gv", opts)
 	keymap("v", "<TAB>", ">gv", opts)
-	keymap("n", "<TAB>", ">>", opts)
-	keymap("n", "<S-TAB>", "<<", opts)
+	-- keymap("n", "<TAB>", ">>", opts)
+	-- keymap("n", "<S-TAB>", "<<", opts)
 
 	-- keymap("n", "<C-j>", "<cmd>:wincmd h<cr>", opts)
 	-- keymap("n", "<C-k>", "<cmd>:wincmd j<cr>", opts)
