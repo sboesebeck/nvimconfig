@@ -114,8 +114,9 @@ else
 	wk.register({
 		z = { ":bprevious<CR>", "previous buffer" },
 		u = { ":bnext<CR>", "next buffer" },
-		Q = { "<cmd>Bdelete!<CR>", "Delete Buffer" },
-		q = { "<cmd>close<CR>", "Close Buffer" },
+		Q = { "<cmd>Bwipeout!<CR>", "Delete Buffer" },
+		q = { "<cmd>Bdelete!<CR>", "close Buffer" },
+		-- q = { "<cmd>close<CR>", "Close Buffer" },
 	}, { mode = "n", prefix = "<leader>" })
 
 	-- NvimTree
