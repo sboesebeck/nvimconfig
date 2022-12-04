@@ -120,7 +120,7 @@ else
 			k = { ":wincmd k<cr>", "Window up" },
 			l = { ":wincmd l<cr>", "Window down" },
 		},
-        m = {
+        b = {
             k = { "<cmd>BookmarkNext<CR>","next bookmark"},
             j = { "<cmd>BookmarkPrev<CR>","prev bookmark"},
             x = { "<cmd>BookmarkClear<CR>","clear bookmark"},
