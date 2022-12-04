@@ -71,7 +71,8 @@ else
 			t = { "<cmd>Telescope live_grep<cr>", "Search for text" },
 			p = { "<cmd>Telescope projects<cr>", "Show projects" },
 			b = { "<cmd>Telescope buffers<cr>", "Show buffer" },
-			e = { "<cmd>Telescope frecency<cr>", "last files" },
+            e = { "<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = 'CWD' })<CR>","Recent files"},
+			E = { "<cmd>Telescope frecency<cr>", "all last files" },
 			n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
 		},
 		s = {
