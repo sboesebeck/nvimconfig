@@ -43,6 +43,16 @@ else
 
 	wk.register({
 		K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+		g = {
+			name = "Goto",
+			f = { "<cmd>:HopChar1<CR>", "Hop char" },
+			w = { "<cmd>:HopWord<CR>", "Hop word" },
+			l = { "<cmd>:HopLine<CR>", "Hop Line" },
+			d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" }, -- create a binding with label
+			D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
+			I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementation" },
+			r = { "<cmd>lua vim.lsp.buf.references()<cr>", "references" },
+		},
 	}, { mode = "n", prefix = "" })
 
 	-- Toggleterm
@@ -100,7 +110,7 @@ else
 		q = { "<cmd>Bdelete!<CR>", "close Buffer" },
 
 		e = { ":NvimTreeToggle<CR>", "Explorer" },
-        m = { ":lua require('codewindow').toggle_minimap()","MiniMap"},
+        o = { ":lua require('codewindow').toggle_minimap()<cr>","MiniMap"},
 		gg = { "<cmd>LazyGit<CR>", "Lazygit" },
 		gh = { "<cmd>LazyGitFilterCurrentFile<CR>", "Git history current file" },
 		h = { "<cmd>nohlsearch<CR>", "no highlight search" },
@@ -110,16 +120,20 @@ else
 			k = { ":wincmd k<cr>", "Window up" },
 			l = { ":wincmd l<cr>", "Window down" },
 		},
-		g = {
-			name = "Goto",
-			f = { "<cmd>:HopChar1<CR>", "Hop char" },
-			w = { "<cmd>:HopWord<CR>", "Hop word" },
-			l = { "<cmd>:HopLine<CR>", "Hop Line" },
-			d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" }, -- create a binding with label
-			D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
-			I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementation" },
-			r = { "<cmd>lua vim.lsp.buf.references()<cr>", "references" },
-		},
+        m = {
+            k = { "<cmd>BookmarkNext<CR>","next bookmark"},
+            k = { "<cmd>BookmarkPrev<CR>","prev bookmark"},
+            x = { "<cmd>BookmarkClear<CR>","clear bookmark"},
+            X = { "<cmd>BookmarkClearAll<CR>","clear all bookmarks"},
+            a = { "<cmd>BookmarkAnnotate<CR>","annotate bookmark"},
+            i = { "<cmd>BookmarkShowAll<CR>","show all bookmarks"},
+        }
+-- keymap("n","<leader>mk","<cmd>BookmarkNext<CR>")
+-- keymap("n","<leader>mj","<cmd>BookmarkPrev<CR>")
+-- keymap("n","<leader>mx","<cmd>BookmarkClear<CR>")
+-- keymap("n","<leader>mX","<cmd>BookmarkClearAll<CR>")
+-- keymap("n","<leader>ma","<cmd>BookmarkAnnotate<CR>")
+-- keymap("n","<leader>mi","<cmd>BookmarkShowAll<CR>")
 	}, { mode = "n", prefix = "<leader>" })
 
 

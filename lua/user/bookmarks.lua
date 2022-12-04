@@ -1,12 +1,12 @@
 
-local keymap = vim.keymap.set
+-- local keymap = vim.keymap.set
 
-keymap("n","<leader>mk","<cmd>BookmarkNext<CR>")
-keymap("n","<leader>mj","<cmd>BookmarkPrev<CR>")
-keymap("n","<leader>mx","<cmd>BookmarkClear<CR>")
-keymap("n","<leader>mX","<cmd>BookmarkClearAll<CR>")
-keymap("n","<leader>ma","<cmd>BookmarkAnnotate<CR>")
-keymap("n","<leader>mi","<cmd>BookmarkShowAll<CR>")
+-- keymap("n","<leader>mk","<cmd>BookmarkNext<CR>")
+-- keymap("n","<leader>mj","<cmd>BookmarkPrev<CR>")
+-- keymap("n","<leader>mx","<cmd>BookmarkClear<CR>")
+-- keymap("n","<leader>mX","<cmd>BookmarkClearAll<CR>")
+-- keymap("n","<leader>ma","<cmd>BookmarkAnnotate<CR>")
+-- keymap("n","<leader>mi","<cmd>BookmarkShowAll<CR>")
 
 -- nmap <Leader><Leader> <Plug>BookmarkToggle ]]
 -- nmap <Leader>i <Plug>BookmarkAnnotate ]]
