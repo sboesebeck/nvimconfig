@@ -122,7 +122,7 @@ else
 		},
         m = {
             k = { "<cmd>BookmarkNext<CR>","next bookmark"},
-            k = { "<cmd>BookmarkPrev<CR>","prev bookmark"},
+            j = { "<cmd>BookmarkPrev<CR>","prev bookmark"},
             x = { "<cmd>BookmarkClear<CR>","clear bookmark"},
             X = { "<cmd>BookmarkClearAll<CR>","clear all bookmarks"},
             a = { "<cmd>BookmarkAnnotate<CR>","annotate bookmark"},
