@@ -44,3 +44,4 @@ vim.opt.iskeyword:append("-")
 vim.opt.spelllang={ "de","en" }
 
 vim.o.relativenumber = true
+vim.g.bookmark_no_default_key_mappings = 1
