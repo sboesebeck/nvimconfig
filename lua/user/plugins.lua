@@ -102,13 +102,15 @@ return packer.startup(function(use)
     use({ "RRethy/vim-illuminate" })
 
     -- Telescope
+    use({"kkharji/sqlite.lua"})
     use({ "nvim-telescope/telescope.nvim" })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+    use({ "xiyaowong/telescope-emoji.nvim"})
+    use({ "nvim-telescope/telescope-frecency.nvim", requires="kkharji/sqlite.lua"})
 
     -- Treesitter
     use({ "nvim-treesitter/nvim-treesitter" })
     use({ "nvim-treesitter/nvim-treesitter-context"})
-    use({ "xiyaowong/telescope-emoji.nvim"})
     -- Notetaking
     -- use({'lervag/wiki.vim'})
 
