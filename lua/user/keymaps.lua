@@ -32,51 +32,8 @@ else
 	--   noremap = true, -- use `noremap` when creating keymaps
 	--   nowait = false, -- use `nowait` when creating keymaps
 	-- }
-	wk.register({
-		f = {
-			name = "Files",
-			f = { "<cmd>Telescope find_files<cr>", "Find File" },
-			r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-			t = { "<cmd>Telescope live_grep<cr>", "Search for text" },
-			p = { "<cmd>Telescope projects<cr>", "Show projects" },
-			b = { "<cmd>Telescope buffers<cr>", "Show buffer" },
-			n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
-		},
-	}, { mode = "n", prefix = "<leader>" })
 
-	wk.register({
-		s = {
-			name = "Spectre",
-			s = { "<cmd>lua require('spectre').open()<cr>", "Search/Replace" },
-			w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search/Replace Word" },
-			p = { "<cmd>lua require('spectre').open_file_search()<cr>", "File Search" },
-			y = { "<cmd>SymbolsOutline<cr>", "Show outline" },
-		},
-	}, { mode = "n", prefix = "<leader>" })
-	wk.register({
-		g = {
-			name = "Goto",
-			d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" }, -- create a binding with label
-			D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
-			I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementation" },
-			r = { "<cmd>lua vim.lsp.buf.references()<cr>", "references" },
-		},
-	}, { mode = "n", prefix = "" })
 
-	wk.register({
-		l = {
-			f = { "<cmd>lua vim.lsp.buf.format({async = true})<cr>", "Format buffer" },
-			i = { "<cmd>LspInfo<cr>", "Lsp Information" },
-			-- I = { "<cmd>LspInstallInfo<cr>", "Lsp Installation Information" },
-			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code..." },
-			j = { "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", "Goto Next Item" },
-			k = { "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", "Goto Pref Item" },
-			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-			s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature" },
-			q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "LocList" },
-			d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostic" },
-		},
-	}, { mode = "n", prefix = "<leader>" })
 
 	-- wk.register({
 	-- 	t = {
@@ -96,8 +53,36 @@ else
 	keymap("n", "<F9>", "<cmd>lua require('dap').continue()<CR>", opts)
 	keymap("n", "<F7>", "<cmd>lua require('dap').step_into()<CR>", opts)
 
-	-- DAP
 	wk.register({
+		f = {
+			name = "Files",
+			f = { "<cmd>Telescope find_files<cr>", "Find File" },
+			r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+			t = { "<cmd>Telescope live_grep<cr>", "Search for text" },
+			p = { "<cmd>Telescope projects<cr>", "Show projects" },
+			b = { "<cmd>Telescope buffers<cr>", "Show buffer" },
+			e = { "<cmd>Telescope frecency<cr>", "last files" },
+			n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
+		},
+		s = {
+			name = "Spectre",
+			s = { "<cmd>lua require('spectre').open()<cr>", "Search/Replace" },
+			w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search/Replace Word" },
+			p = { "<cmd>lua require('spectre').open_file_search()<cr>", "File Search" },
+			y = { "<cmd>SymbolsOutline<cr>", "Show outline" },
+		},
+		l = {
+			f = { "<cmd>lua vim.lsp.buf.format({async = true})<cr>", "Format buffer" },
+			i = { "<cmd>LspInfo<cr>", "Lsp Information" },
+			-- I = { "<cmd>LspInstallInfo<cr>", "Lsp Installation Information" },
+			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code..." },
+			j = { "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", "Goto Next Item" },
+			k = { "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", "Goto Pref Item" },
+			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+			s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature" },
+			q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "LocList" },
+			d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostic" },
+		},
 		d = {
 			b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle breakpoint" },
 			c = { "<cmd>lua require'dap'.continue()<cr>", "Continue..." },
@@ -109,24 +94,35 @@ else
 			u = { "<cmd>lua require'dapui'.toggle()<cr>", "DapUI" },
 			t = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
 		},
-	}, { mode = "n", prefix = "<leader>" })
-
-	wk.register({
 		z = { ":bprevious<CR>", "previous buffer" },
 		u = { ":bnext<CR>", "next buffer" },
 		Q = { "<cmd>Bwipeout!<CR>", "Delete Buffer" },
 		q = { "<cmd>Bdelete!<CR>", "close Buffer" },
-		-- q = { "<cmd>close<CR>", "Close Buffer" },
-	}, { mode = "n", prefix = "<leader>" })
 
-	-- NvimTree
-	wk.register({
 		e = { ":NvimTreeToggle<CR>", "Explorer" },
+        m = { ":lua require('codewindow').toggle_minimap()","MiniMap"},
 		gg = { "<cmd>LazyGit<CR>", "Lazygit" },
 		gh = { "<cmd>LazyGitFilterCurrentFile<CR>", "Git history current file" },
 		h = { "<cmd>nohlsearch<CR>", "no highlight search" },
-		-- gg = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+		w = {
+			h = { ":wincmd h<cr>", "Window to the left" },
+			j = { ":wincmd j<cr>", "Window to the right" },
+			k = { ":wincmd k<cr>", "Window up" },
+			l = { ":wincmd l<cr>", "Window down" },
+		},
+		g = {
+			name = "Goto",
+			f = { "<cmd>:HopChar1<CR>", "Hop char" },
+			w = { "<cmd>:HopWord<CR>", "Hop word" },
+			l = { "<cmd>:HopLine<CR>", "Hop Line" },
+			d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" }, -- create a binding with label
+			D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
+			I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementation" },
+			r = { "<cmd>lua vim.lsp.buf.references()<cr>", "references" },
+		},
 	}, { mode = "n", prefix = "<leader>" })
+
+
 	-- Git
 	-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
@@ -135,14 +131,6 @@ else
 	keymap("n", "<TAB>", ">>", opts)
 	keymap("n", "<S-TAB>", "<<", opts)
 
-	wk.register({
-		w = {
-			h = { ":wincmd h<cr>", "Window to the left" },
-			j = { ":wincmd j<cr>", "Window to the right" },
-			k = { ":wincmd k<cr>", "Window up" },
-			l = { ":wincmd l<cr>", "Window down" },
-		},
-	}, { mode = "n", prefix = "<leader>" })
 	-- keymap("n", "<C-j>", "<cmd>:wincmd h<cr>", opts)
 	-- keymap("n", "<C-k>", "<cmd>:wincmd j<cr>", opts)
 	-- keymap("n", "<C-i>", "<cmd>:wincmd k<CR>", opts)
@@ -166,13 +154,6 @@ else
 	-- keymap("n", "f", "<cmd>:HopChar1<cr>", opts)
 	-- keymap("n", "t", "<cmd>:HopChar2<cr>", opts)
 
-	wk.register({
-		g = {
-			f = { "<cmd>:HopChar1<CR>", "Hop char" },
-			w = { "<cmd>:HopWord<CR>", "Hop word" },
-			l = { "<cmd>:HopLine<CR>", "Hop Line" },
-		},
-	}, { mode = "n", prefix = "<leader>" })
 
 	-- Neoscroll
 
