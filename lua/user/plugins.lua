@@ -107,7 +107,8 @@ return packer.startup(function(use)
 
     -- Treesitter
     use({ "nvim-treesitter/nvim-treesitter" })
-
+    use({ "nvim-treesitter/nvim-treesitter-context"})
+    use({ "xiyaowong/telescope-emoji.nvim"})
     -- Notetaking
     -- use({'lervag/wiki.vim'})
 

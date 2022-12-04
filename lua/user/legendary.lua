@@ -35,8 +35,8 @@ legend.setup({
     -- autocmds here
     -- },
   },
-  functions = {
-    -- Make arbitrary Lua functions that can be executed via the item finder
-    { function() doSomeStuff() end, description = 'Do some stuff with a Lua function!' },
-  },
+  -- functions = {
+  --   -- Make arbitrary Lua functions that can be executed via the item finder
+  --   { function() doSomeStuff() end, description = 'Do some stuff with a Lua function!' },
+  -- },
 })
