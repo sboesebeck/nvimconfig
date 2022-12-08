@@ -36,9 +36,9 @@ dressing.setup({
     min_width = { 20, 0.2 },
 
     -- Window transparency (0-100)
-    winblend = 10,
+    -- winblend = 10,
     -- Change default highlight groups (see :help winhl)
-    winhighlight = "",
+    -- winhighlight = "",
 
     -- Set to `false` to disable
     mappings = {
@@ -106,9 +106,9 @@ dressing.setup({
         swapfile = false,
         filetype = "DressingSelect",
       },
-      win_options = {
-        winblend = 10,
-      },
+      -- win_options = {
+      --   winblend = 10,
+      -- },
       max_width = 80,
       max_height = 40,
       min_width = 40,
@@ -124,9 +124,9 @@ dressing.setup({
       relative = "editor",
 
       -- Window transparency (0-100)
-      winblend = 10,
+      -- winblend = 10,
       -- Change default highlight groups (see :help winhl)
-      winhighlight = "",
+      -- winhighlight = "",
 
       -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
       -- the min_ and max_ options can be a list of mixed types.
