@@ -73,7 +73,7 @@ else
 			b = { "<cmd>Telescope buffers<cr>", "Show buffer" },
             e = { "<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = 'CWD' })<CR>","Recent files"},
 			E = { "<cmd>Telescope frecency<cr>", "all last files" },
-			n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
+			-- n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
 		},
 		s = {
 			name = "Spectre",

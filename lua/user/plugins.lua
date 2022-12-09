@@ -60,13 +60,17 @@ return packer.startup(function(use)
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
-	use({ "j-morano/buffer_manager.nvim" })
+	-- use({ "j-morano/buffer_manager.nvim" })
+    use({"rktjmp/lush.nvim"})
 	-- Colorschemes
+    use({"folke/lsp-colors.nvim"})
 	use({ "folke/tokyonight.nvim" })
-	-- use({ "lunarvim/darkplus.nvim" })
-	--    use({ "danilo-augusto/vim-afterglow"})
-	--    use({ 'jacoborus/tender.vim'})
-	--    use({'christophermca/meta5'})
+	use({"EdenEast/nightfox.nvim"})
+    use({ "lunarvim/darkplus.nvim" })
+    use({ "danilo-augusto/vim-afterglow"})
+	use({ 'jacoborus/tender.vim'})
+	use({'christophermca/meta5'})
+    use({""})
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
