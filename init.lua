@@ -35,6 +35,5 @@ require("user.rusttools")
 require("user.ide")
 require("user.symbols_outline")
 -- require("mason").setup() ]]
-
 -- require("neoscroll").setup()
 require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })

@@ -70,7 +70,6 @@ return packer.startup(function(use)
     use({ "danilo-augusto/vim-afterglow"})
 	use({ 'jacoborus/tender.vim'})
 	use({'christophermca/meta5'})
-    use({""})
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
@@ -81,6 +80,7 @@ return packer.startup(function(use)
     use({ "hrsh7th/cmp-nvim-lsp-signature-help"})
 	use({ "sbdchd/neoformat" })
     use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+    use({"onsails/lspkind.nvim"})
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
