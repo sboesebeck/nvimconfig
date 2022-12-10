@@ -33,8 +33,6 @@ else
 	--   nowait = false, -- use `nowait` when creating keymaps
 	-- }
 
-
-
 	-- wk.register({
 	-- 	t = {
 	-- 		m = { "<cmd>lua require('jdtls').test_nearest_method()<CR>", "Run method" },
@@ -71,7 +69,10 @@ else
 			t = { "<cmd>Telescope live_grep<cr>", "Search for text" },
 			p = { "<cmd>Telescope projects<cr>", "Show projects" },
 			b = { "<cmd>Telescope buffers<cr>", "Show buffer" },
-            e = { "<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = 'CWD' })<CR>","Recent files"},
+			e = {
+				"<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = 'CWD' })<CR>",
+				"Recent files",
+			},
 			E = { "<cmd>Telescope frecency<cr>", "all last files" },
 			-- n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
 		},
@@ -111,7 +112,7 @@ else
 		q = { "<cmd>Bdelete!<CR>", "close Buffer" },
 
 		e = { ":NvimTreeToggle<CR>", "Explorer" },
-        o = { ":lua require('codewindow').toggle_minimap()<cr>","MiniMap"},
+		o = { ":lua require('codewindow').toggle_minimap()<cr>", "MiniMap" },
 		gg = { "<cmd>LazyGit<CR>", "Lazygit" },
 		gh = { "<cmd>LazyGitFilterCurrentFile<CR>", "Git history current file" },
 		h = { "<cmd>nohlsearch<CR>", "no highlight search" },
@@ -121,23 +122,22 @@ else
 			k = { ":wincmd k<cr>", "Window up" },
 			l = { ":wincmd l<cr>", "Window down" },
 		},
-        b = {
-            q = { "<cmd>BookmarkToggle<cr>","Bookmark"},
-            k = { "<cmd>BookmarkNext<CR>","next bookmark"},
-            j = { "<cmd>BookmarkPrev<CR>","prev bookmark"},
-            x = { "<cmd>BookmarkClear<CR>","clear bookmark"},
-            X = { "<cmd>BookmarkClearAll<CR>","clear all bookmarks"},
-            a = { "<cmd>BookmarkAnnotate<CR>","annotate bookmark"},
-            i = { "<cmd>BookmarkShowAll<CR>","show all bookmarks"},
-        }
--- keymap("n","<leader>mk","<cmd>BookmarkNext<CR>")
--- keymap("n","<leader>mj","<cmd>BookmarkPrev<CR>")
--- keymap("n","<leader>mx","<cmd>BookmarkClear<CR>")
--- keymap("n","<leader>mX","<cmd>BookmarkClearAll<CR>")
--- keymap("n","<leader>ma","<cmd>BookmarkAnnotate<CR>")
--- keymap("n","<leader>mi","<cmd>BookmarkShowAll<CR>")
+		b = {
+			q = { "<cmd>BookmarkToggle<cr>", "Bookmark" },
+			k = { "<cmd>BookmarkNext<CR>", "next bookmark" },
+			j = { "<cmd>BookmarkPrev<CR>", "prev bookmark" },
+			x = { "<cmd>BookmarkClear<CR>", "clear bookmark" },
+			X = { "<cmd>BookmarkClearAll<CR>", "clear all bookmarks" },
+			a = { "<cmd>BookmarkAnnotate<CR>", "annotate bookmark" },
+			i = { "<cmd>BookmarkShowAll<CR>", "show all bookmarks" },
+		},
+		-- keymap("n","<leader>mk","<cmd>BookmarkNext<CR>")
+		-- keymap("n","<leader>mj","<cmd>BookmarkPrev<CR>")
+		-- keymap("n","<leader>mx","<cmd>BookmarkClear<CR>")
+		-- keymap("n","<leader>mX","<cmd>BookmarkClearAll<CR>")
+		-- keymap("n","<leader>ma","<cmd>BookmarkAnnotate<CR>")
+		-- keymap("n","<leader>mi","<cmd>BookmarkShowAll<CR>")
 	}, { mode = "n", prefix = "<leader>" })
-
 
 	-- Git
 	-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
@@ -170,7 +170,6 @@ else
 	-- keymap("n", "f", "<cmd>:HopChar1<cr>", opts)
 	-- keymap("n", "t", "<cmd>:HopChar2<cr>", opts)
 
-
 	-- Neoscroll
 
 	local t = {}
@@ -192,4 +191,93 @@ else
 	-- keymap("i","<C-PAGEUP", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
 	-- keymap("i","<S-PAGEUP", "<cmd>lua require('neoscroll').scroll(-vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
 	-- keymap("i","<C-PAGEDOWN", "<cmd>lua require('neoscroll').scroll(vim.api.nvim_win_get_height(0), 'true', '450', [['circular']])<CR>")
+
+	vim.cmd("autocmd FileType * lua CodeRunner()")
+
+	function CodeRunner()
+        -- print ("In function coderunner")
+		local bufnr = vim.api.nvim_get_current_buf()
+		local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
+		local fname = vim.fn.expand("%:p:t")
+		local keymap_c = {} -- normal key map
+		local keymap_c_v = {} -- visual key map
+
+		if ft == "python" then
+			keymap_c = {
+				name = "Code",
+				r = { "<cmd>update<CR><cmd>exec '!python3' shellescape(@%, 1)<cr>", "Run" },
+				m = { "<cmd>TermExec cmd='nodemon -e py %'<cr>", "Monitor" },
+			}
+		elseif ft == "lua" then
+			keymap_c = {
+				name = "Code",
+				r = { "<cmd>luafile %<cr>", "Run" },
+			}
+		elseif ft == "rust" then
+			keymap_c = {
+				name = "Code",
+				r = { "<cmd>execute 'Cargo run' | startinsert<cr>", "Run" },
+				D = { "<cmd>RustDebuggables<cr>", "Debuggables" },
+				h = { "<cmd>RustHoverActions<cr>", "Hover Actions" },
+				R = { "<cmd>RustRunnables<cr>", "Runnables" },
+			}
+		elseif ft == "go" then
+			keymap_c = {
+				name = "Code",
+				r = { "<cmd>GoRun<cr>", "Run" },
+			}
+		elseif ft == "typescript" or ft == "typescriptreact" or ft == "javascript" or ft == "javascriptreact" then
+			keymap_c = {
+				name = "Code",
+				o = { "<cmd>TypescriptOrganizeImports<cr>", "Organize Imports" },
+				r = { "<cmd>TypescriptRenameFile<cr>", "Rename File" },
+				i = { "<cmd>TypescriptAddMissingImports<cr>", "Import Missing" },
+				F = { "<cmd>TypescriptFixAll<cr>", "Fix All" },
+				u = { "<cmd>TypescriptRemoveUnused<cr>", "Remove Unused" },
+				R = { "<cmd>lua require('config.test').javascript_runner()<cr>", "Choose Test Runner" },
+				s = { "<cmd>2TermExec cmd='yarn start'<cr>", "Yarn Start" },
+				t = { "<cmd>2TermExec cmd='yarn test'<cr>", "Yarn Test" },
+			}
+		elseif ft == "java" then
+			keymap_c = {
+				name = "Code",
+				o = { "<cmd>lua require'jdtls'.organize_imports()<cr>", "Organize Imports" },
+				v = { "<cmd>lua require('jdtls').extract_variable()<cr>", "Extract Variable" },
+				c = { "<cmd>lua require('jdtls').extract_constant()<cr>", "Extract Constant" },
+				t = { "<cmd>lua require('jdtls').test_class()<cr>", "Test Class" },
+				n = { "<cmd>lua require('jdtls').test_nearest_method()<cr>", "Test Nearest Method" },
+			}
+			keymap_c_v = {
+				name = "Code",
+				v = { "<cmd>lua require('jdtls').extract_variable(true)<cr>", "Extract Variable" },
+				c = { "<cmd>lua require('jdtls').extract_constant(true)<cr>", "Extract Constant" },
+				m = { "<cmd>lua require('jdtls').extract_method(true)<cr>", "Extract Method" },
+			}
+		end
+
+		if fname == "package.json" then
+			keymap_c.v = { "<cmd>lua require('package-info').show()<cr>", "Show Version" }
+			keymap_c.c = { "<cmd>lua require('package-info').change_version()<cr>", "Change Version" }
+			keymap_c.s = { "<cmd>2TermExec cmd='yarn start'<cr>", "Yarn Start" }
+			keymap_c.t = { "<cmd>2TermExec cmd='yarn test'<cr>", "Yarn Test" }
+		end
+
+		if fname == "Cargo.toml" then
+			keymap_c.u = { "<cmd>lua require('crates').upgrade_all_crates()<cr>", "Upgrade All Crates" }
+		end
+
+		if next(keymap_c) ~= nil then
+			wk.register(
+				{ c = keymap_c },
+				{ mode = "n", silent = true, noremap = true, buffer = bufnr, prefix = "<leader>", nowait = true }
+			)
+		end
+
+		if next(keymap_c_v) ~= nil then
+			wk.register(
+				{ c = keymap_c_v },
+				{ mode = "v", silent = true, noremap = true, buffer = bufnr, prefix = "<leader>", nowait = true }
+			)
+		end
+	end
 end
