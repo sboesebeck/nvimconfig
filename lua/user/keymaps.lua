@@ -48,7 +48,7 @@ else
 			w = { "<cmd>:HopWord<CR>", "Hop word" },
 			l = { "<cmd>:HopLine<CR>", "Hop Line" },
 			d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" }, -- create a binding with label
-			d = { "<cmd>Lspsaga peek_definition<cr>", "Definition" }, -- create a binding with label
+			p = { "<cmd>Lspsaga peek_definition<cr>", "Definition" }, -- create a binding with label
 			D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
 			I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementation" },
 			r = { "<cmd>lua vim.lsp.buf.references()<cr>", "references" },
