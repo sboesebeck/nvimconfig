@@ -61,15 +61,15 @@ return packer.startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "goolord/alpha-nvim" })
 	-- use({ "j-morano/buffer_manager.nvim" })
-    use({"rktjmp/lush.nvim"})
+	use({ "rktjmp/lush.nvim" })
 	-- Colorschemes
-    use({"folke/lsp-colors.nvim"})
+	use({ "folke/lsp-colors.nvim" })
 	use({ "folke/tokyonight.nvim" })
-	use({"EdenEast/nightfox.nvim"})
-    use({ "lunarvim/darkplus.nvim" })
-    use({ "danilo-augusto/vim-afterglow"})
-	use({ 'jacoborus/tender.vim'})
-	use({'christophermca/meta5'})
+	use({ "EdenEast/nightfox.nvim" })
+	use({ "lunarvim/darkplus.nvim" })
+	use({ "danilo-augusto/vim-afterglow" })
+	use({ "jacoborus/tender.vim" })
+	use({ "christophermca/meta5" })
 	-- cmp plugins
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
@@ -77,11 +77,11 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
-    -- use({ "hrsh7th/cmp-nvim-lsp-signature-help"})
-    use({ "ray-x/lsp_signature.nvim"})
+	-- use({ "hrsh7th/cmp-nvim-lsp-signature-help"})
+	use({ "ray-x/lsp_signature.nvim" })
 	use({ "sbdchd/neoformat" })
-    use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
-    use({"onsails/lspkind.nvim"})
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use({ "onsails/lspkind.nvim" })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
@@ -106,7 +106,17 @@ return packer.startup(function(use)
 	-- use({'zchee/deoplete-jedi'})
 	--[[ use { "williamboman/nvim-lsp-installer" } -- simple to use language server installer ]]
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use({
+		"glepnir/lspsaga.nvim",
+		branch = "main",
+		config = function()
+			local saga = require("lspsaga")
+
+			saga.init_lsp_saga({
+				-- your configuration
+			})
+		end,
+	})
 	use({ "RRethy/vim-illuminate" })
 
 	-- Telescope

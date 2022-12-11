@@ -40,13 +40,15 @@ else
 	-- }, { mode = "n", prefix = "<leader>" })
 
 	wk.register({
-		K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+		-- K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+		K = { "<cmd>Lspsaga hover_doc<CR>", "Hover" },
 		g = {
 			name = "Goto",
 			f = { "<cmd>:HopChar1<CR>", "Hop char" },
 			w = { "<cmd>:HopWord<CR>", "Hop word" },
 			l = { "<cmd>:HopLine<CR>", "Hop Line" },
-			d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" }, -- create a binding with label
+			-- d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" }, -- create a binding with label
+			d = { "<cmd>Lspsaga peek_definition<cr>", "Definition" }, -- create a binding with label
 			D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
 			I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementation" },
 			r = { "<cmd>lua vim.lsp.buf.references()<cr>", "references" },
@@ -87,7 +89,8 @@ else
 			f = { "<cmd>lua vim.lsp.buf.format({async = true})<cr>", "Format buffer" },
 			i = { "<cmd>LspInfo<cr>", "Lsp Information" },
 			-- I = { "<cmd>LspInstallInfo<cr>", "Lsp Installation Information" },
-			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code..." },
+			-- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code..." },
+			a = { "<cmd>Lspsaga code_action<cr>", "Code..." },
 			j = { "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", "Goto Next Item" },
 			k = { "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", "Goto Pref Item" },
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
@@ -141,7 +144,12 @@ else
 
 	-- Git
 	-- keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
+    
+	wk.register({
+       l ={
+           a={"<cmd>Lspsaga code_action<cr>","Code..."}
+        }
+    },{mode="v",prefix="<leader>"})
 	keymap("v", "<S-TAB>", "<gv", opts)
 	keymap("v", "<TAB>", ">gv", opts)
 	-- keymap("n", "<TAB>", ">>", opts)
