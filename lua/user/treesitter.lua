@@ -51,6 +51,15 @@ context.setup{
             'subsection',
             'subsubsection',
         },
+        java = {
+            "public",
+            "private",
+            "void",
+            "protected",
+            "interface",
+            "enum",
+            "do",
+        },
         haskell = {
             'adt'
         },
@@ -99,6 +108,7 @@ context.setup{
         -- Treat patterns.rust as a Lua pattern (i.e "^impl_item$" will
         -- exactly match "impl_item" only)
         -- rust = true,
+        java = true,
     },
 
     -- [!] The options below are exposed but shouldn't require your attention,
