@@ -84,8 +84,9 @@ require("dapui").setup({
 		},
 		{
 			elements = {
-				"repl",
-				{id="console",size=0.7},
+                "console",
+				-- "repl",
+				-- {id="console",size=0.9},
 			},
 			size = 40,
 			position = "bottom",
