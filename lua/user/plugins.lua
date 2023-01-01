@@ -49,6 +49,7 @@ return packer.startup(function(use)
     use({"akinsho/bufferline.nvim"}) -- status line 
     use({"moll/vim-bbye"}) -- closing of buffers 
     use({"DanilaMihailov/beacon.nvim"}) -- cursor jump
+    use({"fladson/vim-kitty"})
 
     use({"nvim-lualine/lualine.nvim"}) -- lua status 
     use({"akinsho/toggleterm.nvim"}) -- show terminal 
