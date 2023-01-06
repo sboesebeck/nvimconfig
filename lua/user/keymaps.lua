@@ -159,10 +159,10 @@ else
 	-- keymap("n", "<TAB>", ">>", opts)
 	-- keymap("n", "<S-TAB>", "<<", opts)
 
-	-- keymap("n", "<C-j>", "<cmd>:wincmd h<cr>", opts)
-	-- keymap("n", "<C-k>", "<cmd>:wincmd j<cr>", opts)
-	-- keymap("n", "<C-i>", "<cmd>:wincmd k<CR>", opts)
-	-- keymap("n", "<C-l>", "<cmd>:wincmd l<CR>", opts)
+	keymap("n", "<C-h>", "<cmd>:wincmd h<cr>", opts)
+	keymap("n", "<C-j>", "<cmd>:wincmd j<cr>", opts)
+	keymap("n", "<C-k>", "<cmd>:wincmd k<CR>", opts)
+	keymap("n", "<C-l>", "<cmd>:wincmd l<CR>", opts)
 
 	-- keymap("n", "<C-j>", "<C-w>h", opts)
 	-- keymap("n", "<C-k>", "<C-w>j", opts)

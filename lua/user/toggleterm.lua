@@ -39,10 +39,10 @@ function _G.set_terminal_keymaps()
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", "<cmd>:wincmd k<CR>", opts)
 	vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", "<cmd>:wincmd l<CR>", opts)
 	-- -- Resize with arrows
-	vim.api.nvim_buf_set_keymap(0, "t", "<M-Down>", "<cmd>:resize -2<CR>", opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<M-Up>", "<cmd>:resize +2<CR>", opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<M-Left>", "<cmd>:vertical resize -2<CR>", opts)
-	vim.api.nvim_buf_set_keymap(0, "t", "<M-Right>", "<cmd>:vertical resize +2<CR>", opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<S-Down>", "<cmd>:resize -2<CR>", opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<S-Up>", "<cmd>:resize +2<CR>", opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<S-Left>", "<cmd>:vertical resize -2<CR>", opts)
+	vim.api.nvim_buf_set_keymap(0, "t", "<S-Right>", "<cmd>:vertical resize +2<CR>", opts)
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
