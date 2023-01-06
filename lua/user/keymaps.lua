@@ -173,6 +173,10 @@ else
 	keymap("n", "<M-Down>", ":resize +2<CR>", opts)
 	keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
 	keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
+	keymap("n", "<S-Up>", ":resize -2<CR>", opts)
+	keymap("n", "<S-Down>", ":resize +2<CR>", opts)
+	keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
+	keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 	-- hop
 	-- keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opts)
