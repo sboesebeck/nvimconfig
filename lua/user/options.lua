@@ -46,3 +46,29 @@ vim.opt.iskeyword:append("-")
 vim.opt.spelllang={ "de","en" }
 vim.o.relativenumber = true
 vim.g.bookmark_no_default_key_mappings = 1
+
+if vim.g.neovide ~= nil then
+    vim.g.neovide_transparency = 0.9
+    vim.g.neovide_floating_blur_amount_x = 5.0
+    vim.g.neovide_floating_blur_amount_y = 5.0
+    vim.g.neovide_input_macos_alt_is_meta = false
+    vim.g.neovide_input_use_logo=true
+    -- animation settingsneovide_cursor_animation_length
+    vim.g.neovide_cursor_animation_length=0.08
+    vim.g.neovide_cursor_trail_size = 0.8
+    vim.g.neovide_cursor_antialiasing = true
+    vim.g.neovide_cursor_vfx_mode = "railgun"
+    -- vim.g.neovide_cursro_vfx_mode = "torpedo"
+    -- vim.g.neovide_cursro_vfx_mode = "pixiedust"
+    -- vim.g.neovide_cursro_vfx_mode = "sonicboom"
+    -- vim.g.neovide_cursro_vfx_mode = "ripple"
+    -- vim.g.neovide_cursro_vfx_mode = "wireframe"
+    --particle settings
+    vim.g.neovide_cursor_vfx_opacity = 200.0
+    vim.g.neovide_cursor_vfx_particle_lifetime=1.2
+    vim.g.neovide_cursor_vfx_particle_density = 9.0
+    vim.g.neovide_cursor_vfx_particle_speed = 10.0
+    vim.g.neovide_cursor_vfx_particle_phase = 1.5   -- railgun only - the lower, more linewise is
+    vim.g.neovide_cursor_vfx_particle_curl = 1.0 --railgun only, the lower it looks more like a collapsing sine wave
+end
+

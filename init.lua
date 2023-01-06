@@ -32,6 +32,7 @@ require("user.trouble")
 require("user.rusttools")
 -- require("user.aerial")
 require("user.ide")
+require("user.obsidian")
 require("user.symbols_outline")
 -- require("mason").setup() ]]
 -- require("neoscroll").setup()

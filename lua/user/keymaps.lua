@@ -78,6 +78,11 @@ else
 			E = { "<cmd>Telescope frecency<cr>", "all last files" },
 			-- n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
 		},
+        o = {
+            name = "Obsidian",
+            l = { "<cmd>ObsidianFollowLink<cr>","Follow Obsidian link"},
+            t = { "<cmd>ObsidianToday<cr>","create a new daily note"},
+        },
 		s = {
 			name = "Spectre",
 			s = { "<cmd>lua require('spectre').open()<cr>", "Search/Replace" },
@@ -115,7 +120,6 @@ else
 		q = { "<cmd>Bdelete!<CR>", "close Buffer" },
 
 		e = { ":NvimTreeToggle<CR>", "Explorer" },
-		o = { ":lua require('codewindow').toggle_minimap()<cr>", "MiniMap" },
 		gg = { "<cmd>LazyGit<CR>", "Lazygit" },
 		gh = { "<cmd>LazyGitFilterCurrentFile<CR>", "Git history current file" },
 		h = { "<cmd>nohlsearch<CR>", "no highlight search" },

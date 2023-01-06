@@ -162,6 +162,11 @@ return packer.startup(function(use)
     -- JAVA
     use({"mfussenegger/nvim-jdtls"})   -- java support 
 
+    -- 
+    use({'godlygeek/tabular'})
+    use ({'preservim/vim-markdown'})
+    use({'epwalsh/obsidian.nvim'})
+
     -- tools
 
     use({"simrat39/symbols-outline.nvim"}) -- showing structure
