@@ -26,6 +26,7 @@ rt.setup({
 			-- to enable rust-analyzer settings visit:
 			-- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
 			["rust-analyzer"] = {
+                inlayHints = { locationLinks = false },
 				-- enable clippy on save
 				checkOnSave = {
 					command = "clippy",

@@ -168,7 +168,7 @@ return packer.startup(function(use)
     use({'epwalsh/obsidian.nvim'})
 
     -- tools
-
+    use({'kevinhwang91/nvim-bqf'})
     use({"simrat39/symbols-outline.nvim"}) -- showing structure
     use({"folke/which-key.nvim"})
     use({
