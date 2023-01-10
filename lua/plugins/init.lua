@@ -106,7 +106,7 @@ return {
 
     -- 
     'godlygeek/tabular',
-    'preservim/vim-markdown',
+    -- 'preservim/vim-markdown',
 
     -- tools
     'kevinhwang91/nvim-bqf',
