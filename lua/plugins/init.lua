@@ -1,7 +1,7 @@
 return {
     "lewis6991/impatient.nvim", -- speed up startup
     -- My plugins here
-    "wbthomason/packer.nvim", -- Have packer manage itself
+    -- "wbthomason/packer.nvim", -- Have packer manage itself
     "nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
     "windwp/nvim-spectre", -- search and replace
     "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
