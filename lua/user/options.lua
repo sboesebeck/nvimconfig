@@ -8,6 +8,10 @@ vim.opt.hlsearch = true                         -- highlight all matches on prev
 vim.opt.ignorecase = true                       -- ignore case in search patterns
 vim.opt.mouse = "a"                             -- allow the mouse to be used in neovim
 vim.opt.autoread=true
+vim.opt.autoindent=true
+vim.opt.smarttab=true
+vim.opt.cindent=true
+
 --vim.opt.mousescroll={"ver":1,"hor":5}
 vim.opt.mousemodel="extend"
 vim.opt.pumheight = 10                          -- pop up menu height
@@ -29,7 +33,7 @@ vim.opt.tabstop = 4                             -- insert 2 spaces for a tab
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
 vim.opt.laststatus = 3
-vim.opt.showcmd = false
+vim.opt.showcmd = true                          -- display command in bottom bar
 vim.opt.ruler = false
 vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
@@ -46,6 +50,16 @@ vim.opt.iskeyword:append("-")
 vim.opt.spelllang={ "de","en" }
 vim.o.relativenumber = true
 vim.g.bookmark_no_default_key_mappings = 1
+
+vim.opt.wrap = false      -- never wrap lines
+vim.opt.showmatch = true -- show matching brackets in
+vim.opt.foldenable = false
+vim.opt.foldlevel = 4
+vim.opt.foldmethod='syntax'
+vim.opt.eol = false
+vim.opt.showbreak= '↪' -- character to show when line is broken
+vim.opt.incsearch = true
+
 
 if vim.g.neovide ~= nil then
     vim.g.neovide_transparency = 0.9

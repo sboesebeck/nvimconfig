@@ -3,20 +3,20 @@ return {
     -- My plugins here
     "wbthomason/packer.nvim", -- Have packer manage itself
     "nvim-lua/plenary.nvim", -- Useful lua functions used by lots of plugins
-    "windwp/nvim-spectre", -- search and replace 
+    "windwp/nvim-spectre", -- search and replace
     "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
-    -- "numToStr/Comment.nvim", -- commenting 
+    -- "numToStr/Comment.nvim", -- commenting
     -- use({ "JoosepAlviste/nvim-ts-context-commentstring" })
     -- "ahmedkhalf/project.nvim", -- project settings
-    "kyazdani42/nvim-web-devicons", -- icons 
-    -- "akinsho/bufferline.nvim", -- status line 
-    "moll/vim-bbye", -- closing of buffers 
+    "kyazdani42/nvim-web-devicons", -- icons
+    -- "akinsho/bufferline.nvim", -- status line
+    "moll/vim-bbye", -- closing of buffers
     "DanilaMihailov/beacon.nvim", -- cursor jump
     "fladson/vim-kitty",
 
-    -- "akinsho/toggleterm.nvim", -- show terminal 
-    -- "lukas-reineke/indent-blankline.nvim", -- indent blank lines 
-    -- "goolord/alpha-nvim", -- startup menu 
+    -- "akinsho/toggleterm.nvim", -- show terminal
+    -- "lukas-reineke/indent-blankline.nvim", -- indent blank lines
+    -- "goolord/alpha-nvim", -- startup menu
     -- use({ "j-morano/buffer_manager.nvim" })
     -- Colorschemes
     "rktjmp/lush.nvim", -- color
@@ -27,17 +27,23 @@ return {
     "danilo-augusto/vim-afterglow",
     "jacoborus/tender.vim",
     "christophermca/meta5",
+    {
+        'navarasu/onedark.nvim',
+        config = function()
+            require('onedark').load()
+        end
+    },
     -- cmp plugins
     "hrsh7th/nvim-cmp", -- The completion plugin
     "hrsh7th/cmp-buffer", -- buffer completions
     "hrsh7th/cmp-path", -- path completions
     "saadparwaiz1/cmp_luasnip", -- snippet completions
-    "hrsh7th/cmp-nvim-lsp", -- lsp connection 
-    "hrsh7th/cmp-nvim-lua", -- lua 
+    "hrsh7th/cmp-nvim-lsp", -- lsp connection
+    "hrsh7th/cmp-nvim-lua", -- lua
     -- "hrsh7th/cmp-nvim-lsp-signature-help",
-    "ray-x/lsp_signature.nvim", -- help with signature of methods while typing 
-    "sbdchd/neoformat", --  formatter 
-    "onsails/lspkind.nvim",   -- better code completion disply / icons
+    "ray-x/lsp_signature.nvim", -- help with signature of methods while typing
+    "sbdchd/neoformat", --  formatter
+    "onsails/lspkind.nvim", -- better code completion disply / icons
 
     -- snippets
     "L3MON4D3/LuaSnip", -- snippet engine
@@ -64,9 +70,10 @@ return {
     -- "RRethy/vim-illuminate", -- hightlighting same word unter cursor
 
     -- Telescope
-    "kkharji/sqlite.lua",   -- needed for some other plugins
+    "kkharji/sqlite.lua", -- needed for some other plugins
     -- "zim-telescope/telescope.nvim",
-    {'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+    { 'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
     "xiyaowong/telescope-emoji.nvim",
     {
         "nvim-telescope/telescope-frecency.nvim",
@@ -88,23 +95,27 @@ return {
     -- 	end,
     -- })
     -- Git
-    "f-person/git-blame.nvim",   -- blam linej
-    "kdheepak/lazygit.nvim",     -- lazygit opening
+    "f-person/git-blame.nvim", -- blam linej
+    "kdheepak/lazygit.nvim", -- lazygit opening
     -- use({"TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim"}) -- another git client
     -- "tpope/vim-fugitive",
-    "airblade/vim-gitgutter",     --- git status
+    "airblade/vim-gitgutter", --- git status
     -- DAP
-    "mfussenegger/nvim-dap",    -- debugging
-    "rcarriga/nvim-dap-ui",     -- debuggin ui 
+    "mfussenegger/nvim-dap", -- debugging
+    "rcarriga/nvim-dap-ui", -- debuggin ui
     "ravenxrz/DAPInstall.nvim",
     "mfussenegger/nvim-dap-python",
     -- "HiPhish/debugpy.nvim",
     "MattesGroeger/vim-bookmarks",
 
     -- JAVA
-    "mfussenegger/nvim-jdtls",   -- java support 
+    "mfussenegger/nvim-jdtls", -- java support
 
-    -- 
+    "andymass/vim-matchup",
+    "vim-test/vim-test",
+    "j-hui/fidget.nvim",
+
+    --
     'godlygeek/tabular',
     -- 'preservim/vim-markdown',
 
@@ -129,7 +140,7 @@ return {
             codewindow.setup()
             codewindow.apply_default_keybinds()
         end
-    }, ---- mini view of files 
+    }, ---- mini view of files
 
     -- use({
     -- 	"nagy135/typebreak.nvim",
@@ -138,5 +149,5 @@ return {
     -- 	end,
 
     -- Put this at the end after all plugins
-   -- if PACKER_BOOTSTRAP then require("packer").sync() end
+    -- if PACKER_BOOTSTRAP then require("packer").sync() end
 }

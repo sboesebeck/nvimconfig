@@ -169,8 +169,8 @@ else
 	-- keymap("n", "<C-i>", "<C-w>k", opts)
 	-- keymap("n", "<C-l>", "<C-w>l", opts)
 	-- Resize with arrows
-	-- keymap("n", "<M-Up>", ":resize -2<CR>", opts)
-	-- keymap("n", "<M-Down>", ":resize +2<CR>", opts)
+	keymap("n", "<M-Up>", ":resize -2<CR>", opts)
+	keymap("n", "<M-Down>", ":resize +2<CR>", opts)
 	-- keymap("n", "<M-Left>", ":vertical resize -2<CR>", opts)
 	-- keymap("n", "<M-Right>", ":vertical resize +2<CR>", opts)
 	keymap("n", "<S-Up>", ":resize -2<CR>", opts)
