@@ -120,8 +120,8 @@ local config = {
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
         '-javaagent:' .. home .. '/.local/share/nvim/mason/packages/jdtls/lombok.jar',
-        '-jar', vim.fn.glob('/opt/homebrew/Cellar/jdtls/1.18.0/libexec/plugins/org.eclipse.equinox.launcher_*.jar'),
-        '-configuration', '/opt/homebrew/Cellar/jdtls/1.18.0/libexec/config_mac',
+        '-jar', vim.fn.glob(home .. '/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar'),
+        '-configuration', home .. '/.local/share/nvim/mason/packages/jdtls/config_mac',
         '-data', workspace_folder,
     },
 }
