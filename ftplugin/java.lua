@@ -14,6 +14,7 @@ local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(
 local on_attach = function(client, bufnr)
     jdtls.setup_dap({ hotcodereplace = 'auto' })
     jdtls.setup.add_commands()
+    require("jdtls.dap").setup_dap_main_class_configs()
 
     -- Default keymaps
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
