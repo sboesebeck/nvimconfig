@@ -152,6 +152,8 @@ else
 	wk.register({
 		l = {
 			a = { "<cmd>Lspsaga code_action<cr>", "Code..." },
+            f = { "<cmd>lua vim.lsp.buf.range_formatting()<CR>", "Format"},
+
 		},
 	}, { mode = "v", prefix = "<leader>" })
 	keymap("v", "<S-TAB>", "<gv", opts)
