@@ -259,7 +259,7 @@ else
 		elseif ft == "java" then
 			keymap_c = {
 				name = "Code",
-				c = { "<cmd>lua require'jdtls'.compile()<cr>", "Compile" },
+				b = { "<cmd>lua require'jdtls'.compile()<cr>", "build / Compile" },
 				o = { "<cmd>lua require'jdtls'.organize_imports()<cr>", "Organize Imports" },
 				v = { "<cmd>lua require('jdtls').extract_variable()<cr>", "Extract Variable" },
 				c = { "<cmd>lua require('jdtls').extract_constant()<cr>", "Extract Constant" },
@@ -268,6 +268,7 @@ else
 				t = { "<cmd>lua require('jdtls').test_class()<cr>", "Test Class" },
 				n = { "<cmd>lua require('jdtls').test_nearest_method()<cr>", "Test Nearest Method" },
                 u = { "<Cmd>JdtUpdateConfig<CR>", "Update Config" },
+                a = { "<Cmd>lua specifyArgsForJava()<CR>","Define Commandline arguments"},
 			}
 			keymap_c_v = {
 				name = "Code",
