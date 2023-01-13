@@ -40,15 +40,15 @@ else
 	-- }, { mode = "n", prefix = "<leader>" })
 
 	wk.register({
-		-- K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
-		K = { "<cmd>Lspsaga hover_doc<CR>", "Hover" },
+		K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+		-- K = { "<cmd>Lspsaga hover_doc<CR>", "Hover" },
 		g = {
 			name = "Goto",
 			f = { "<cmd>:HopChar1<CR>", "Hop char" },
 			w = { "<cmd>:HopWord<CR>", "Hop word" },
 			l = { "<cmd>:HopLine<CR>", "Hop Line" },
 			d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Definition" }, -- create a binding with label
-			p = { "<cmd>Lspsaga peek_definition<cr>", "Definition" }, -- create a binding with label
+			-- p = { "<cmd>Lspsaga peek_definition<cr>", "Definition" }, -- create a binding with label
 			D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "declaration" },
 			I = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "implementation" },
 			r = { "<cmd>lua vim.lsp.buf.references()<cr>", "references" },
@@ -101,9 +101,9 @@ else
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 			s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature" },
 			q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "LocList" },
-			-- d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostic" },
-			d = { "<cmd>Lspsaga show_line_diagnostics<cr>", "diagnostic" },
-			D = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "diagnostic" },
+			d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostic" },
+			-- d = { "<cmd>Lspsaga show_line_diagnostics<cr>", "diagnostic" },
+			-- D = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "diagnostic" },
 		},
 		d = {
 			b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle breakpoint" },
@@ -153,7 +153,8 @@ else
 
 	wk.register({
 		l = {
-			a = { "<cmd>Lspsaga code_action<cr>", "Code..." },
+			-- a = { "<cmd>Lspsaga code_action<cr>", "Code..." },
+			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code..." },
             f = { "<cmd>lua vim.lsp.buf.range_formatting()<CR>", "Format"},
 
 		},
