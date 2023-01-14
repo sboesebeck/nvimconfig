@@ -102,6 +102,7 @@ else
 			s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature" },
 			q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "LocList" },
 			d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostic" },
+            o = { "<cmd>SymbolsOutline<cr>","Outline"},
 			-- d = { "<cmd>Lspsaga show_line_diagnostics<cr>", "diagnostic" },
 			-- D = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "diagnostic" },
 		},
