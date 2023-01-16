@@ -114,8 +114,12 @@ return {
 
     "andymass/vim-matchup",
     "vim-test/vim-test",
+    {
     "j-hui/fidget.nvim",
-
+        config = function()
+            require("fidget").setup({})
+        end
+    },
     --
     "godlygeek/tabular",
     -- 'preservim/vim-markdown',

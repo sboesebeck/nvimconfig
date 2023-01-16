@@ -21,6 +21,12 @@ if not status_ok then
 	--   command_mode = "c",
 	print("Cannot set keys without which-key")
 else
+	if vim.g.neovide ~= nil then
+       	keymap("n", "<D-v>", "P", opts)
+       	keymap("i", "<D-v>", "<C-r><C-p>0", opts)
+       	keymap("n", "<D-c>", "y", opts)
+
+	end
 	-- print("Configuring which-key")
 	-- local opts = {
 	--   mode = "n", -- NORMAL mode
@@ -78,11 +84,11 @@ else
 			E = { "<cmd>Telescope frecency<cr>", "all last files" },
 			-- n = { "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", "Buffer manager" },
 		},
-        o = {
-            name = "Obsidian",
-            l = { "<cmd>ObsidianFollowLink<cr>","Follow Obsidian link"},
-            t = { "<cmd>ObsidianToday<cr>","create a new daily note"},
-        },
+		o = {
+			name = "Obsidian",
+			l = { "<cmd>ObsidianFollowLink<cr>", "Follow Obsidian link" },
+			t = { "<cmd>ObsidianToday<cr>", "create a new daily note" },
+		},
 		s = {
 			name = "Spectre",
 			s = { "<cmd>lua require('spectre').open()<cr>", "Search/Replace" },
@@ -102,7 +108,7 @@ else
 			s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature" },
 			q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "LocList" },
 			d = { "<cmd>lua vim.diagnostic.open_float()<cr>", "diagnostic" },
-            o = { "<cmd>SymbolsOutline<cr>","Outline"},
+			o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 			-- d = { "<cmd>Lspsaga show_line_diagnostics<cr>", "diagnostic" },
 			-- D = { "<cmd>Lspsaga show_buf_diagnostics<cr>", "diagnostic" },
 		},
@@ -156,8 +162,7 @@ else
 		l = {
 			-- a = { "<cmd>Lspsaga code_action<cr>", "Code..." },
 			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code..." },
-            f = { "<cmd>lua vim.lsp.buf.range_formatting()<CR>", "Format"},
-
+			f = { "<cmd>lua vim.lsp.buf.range_formatting()<CR>", "Format" },
 		},
 	}, { mode = "v", prefix = "<leader>" })
 	keymap("v", "<S-TAB>", "<gv", opts)
@@ -271,8 +276,8 @@ else
 				s = { "<cmd>lua require('jdtls').jshell()<cr>", "jshell" },
 				t = { "<cmd>lua require('jdtls').test_class()<cr>", "Test Class" },
 				n = { "<cmd>lua require('jdtls').test_nearest_method()<cr>", "Test Nearest Method" },
-                u = { "<Cmd>JdtUpdateConfig<CR>", "Update Config" },
-                a = { "<Cmd>lua specifyArgsForJava()<CR>","Define Commandline arguments"},
+				u = { "<Cmd>JdtUpdateConfig<CR>", "Update Config" },
+				a = { "<Cmd>lua specifyArgsForJava()<CR>", "Define Commandline arguments" },
 			}
 			keymap_c_v = {
 				name = "Code",
